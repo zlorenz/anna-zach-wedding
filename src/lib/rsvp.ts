@@ -4,6 +4,7 @@
  */
 
 import { getEnv } from './env';
+import { getLocaleFromUrl } from './i18n';
 import { sendRsvpConfirmationEmail } from './rsvp-email';
 
 export type RsvpPayload = {
@@ -92,6 +93,7 @@ export async function processRsvpSubmission(payload: RsvpPayload): Promise<{ ok:
   const isYes = /yes/i.test(attending);
 
   const sourceUrl = payload.sourceUrl || '';
+  const emailLocale = getLocaleFromUrl(sourceUrl);
   let userAgent = (payload.userAgent || '').replace(/\s+/g, ' ').trim();
   if (userAgent.length > 120) userAgent = userAgent.slice(0, 120) + '…';
 
@@ -128,6 +130,7 @@ export async function processRsvpSubmission(payload: RsvpPayload): Promise<{ ok:
       isYes: false,
       addlGuestCount: 0,
       guests: [],
+      locale: emailLocale,
     });
 
     return { ok: true };
@@ -196,6 +199,7 @@ export async function processRsvpSubmission(payload: RsvpPayload): Promise<{ ok:
     dietary: diet,
     addlGuestCount: addlN,
     guests,
+    locale: emailLocale,
   });
 
   return { ok: true };

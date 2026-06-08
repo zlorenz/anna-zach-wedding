@@ -126,8 +126,8 @@ export type TravelEssentials = {
   visa: {
     title: string;
     bodyHtml: string;
-    buttonLabel: string;
-    buttonUrl: string;
+    buttonLabel?: string;
+    buttonUrl?: string;
     callout: TravelEssentialsCallout;
   };
   sim: {

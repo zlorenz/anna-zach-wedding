@@ -64,6 +64,9 @@ Text Domain: anna-zach-wedding-child
   /* Links: warmer + more saturated than body text (still editorial, not loud) */
   --az-link: #5C4F47;
   --az-link-hover: #2C2420;
+  /* Dark sections (#2C2420 bg): light cream links — never use --az-link-hover (#2C2420) on dark */
+  --az-link-on-dark: color-mix(in srgb, var(--az-bg) 48%, var(--az-surface));
+  --az-link-on-dark-hover: var(--az-surface);
   --az-focus: color-mix(in srgb, var(--az-accent) 45%, white);
   --az-input-bg: var(--az-surface-alt);
   --az-muted: color-mix(in srgb, var(--az-text-soft) 80%, white);
@@ -142,8 +145,8 @@ html[lang="ru"] strong {
 
 /* Futura PT Bold — match English bold sans (inline links, labels; not UI buttons) */
 html[lang="ru"] :is(
-  .navbar-nav .nav-link.active,
-  .navbar-nav .is-active > .nav-link,
+  .navbar-nav .nav-link.active:not([href*="rsvp"]),
+  .navbar-nav .is-active > .nav-link:not([href*="rsvp"]),
   .az-itinerary-page__section--multi-day .az-itinerary-day__eyebrow,
   .az-itinerary-event__external-link,
   .az-travel-callout__title,
@@ -456,7 +459,9 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   color: var(--az-nav-rsvp-hover) !important;
 }
 
-.az-nav-menu > li.is-active > a.nav-link[href*="rsvp"] {
+.az-nav-menu > li.is-active > a.nav-link[href*="rsvp"],
+.az-nav-menu a.nav-link[href*="rsvp"].active {
+  font-family: var(--az-font-sans);
   font-weight: 500;
 }
 
@@ -763,8 +768,8 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   color: var(--az-nav-link-hover);
 }
 
-.navbar-nav .nav-link.active,
-.navbar-nav .is-active > .nav-link {
+.navbar-nav .nav-link.active:not([href*="rsvp"]),
+.navbar-nav .is-active > .nav-link:not([href*="rsvp"]) {
   font-weight: 700;
   color: var(--az-nav-link-active);
 }
@@ -845,19 +850,32 @@ a:focus {
   text-decoration: none;
 }
 
+/* Dark sections — remap link tokens so nested links inherit readable colors */
+.az-section--dark {
+  --az-link: var(--az-link-on-dark);
+  --az-link-hover: var(--az-link-on-dark-hover);
+  --bs-link-color: var(--az-link-on-dark);
+  --bs-link-hover-color: var(--az-link-on-dark-hover);
+}
+
 /* Buttons stay their own weight; hero/on-dark links stay light */
 a.btn {
   font-weight: 400;
 }
 
+.az-hero.text-white {
+  --az-link: var(--az-link-on-dark);
+  --az-link-hover: var(--az-link-on-dark-hover);
+}
+
 .az-hero.text-white a:not(.btn) {
-  color: #f3e6d9;
+  color: var(--az-link-on-dark);
   font-weight: 700;
 }
 
 .az-hero.text-white a:not(.btn):hover,
 .az-hero.text-white a:not(.btn):focus {
-  color: #fff;
+  color: var(--az-link-on-dark-hover);
 }
 
 /* Focus (keep it subtle, avoid Bootstrap blue) */
@@ -2200,15 +2218,9 @@ body.page-itinerary:has(.az-itinerary-image-break) .az-itinerary-image-break.az-
    Travel page (editorial baseline)
 ================================ */
 
-/* Default main offset + first-section padding stacked too much space below the nav */
+/* ~75% of standard inner-page nav clearance (full stack was slightly too generous) */
 body.page-travel #az-main {
-  padding-top: clamp(5.5rem, 9vw, 7.5rem);
-}
-
-@media (max-width: 991.98px) {
-  body.page-travel #az-main {
-    padding-top: var(--az-main-nav-offset);
-  }
+  padding-top: calc(var(--az-main-nav-offset) * 0.75);
 }
 
 .az-travel__section {
@@ -2306,7 +2318,7 @@ a.az-travel__button {
 ================================ */
 
 .az-travel.az-travel__section--airport {
-  padding-top: clamp(1.25rem, 2.5vw, 2rem);
+  padding-top: calc(var(--az-section-lead-pt) * 0.75);
   padding-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
@@ -2966,9 +2978,7 @@ a.az-travel__button {
     padding: clamp(2.25rem, 6vw, 3rem) 0;
   }
 
-  /* Same nav-to-heading gap as Accommodation, Itinerary, FAQ (main offset + section-lead-pt) */
   body.page-travel .az-travel.az-travel__section--airport {
-    padding-top: var(--az-section-lead-pt);
     padding-bottom: clamp(2rem, 5vw, 2.75rem);
   }
 

@@ -7,6 +7,16 @@ export function getLocaleFromPath(pathname: string): Locale {
   return pathname === '/ru' || pathname.startsWith('/ru/') ? 'ru' : 'en';
 }
 
+/** Derive locale from a full page URL (e.g. RSVP referer). */
+export function getLocaleFromUrl(url: string): Locale {
+  if (!url) return DEFAULT_LOCALE;
+  try {
+    return getLocaleFromPath(new URL(url).pathname);
+  } catch {
+    return DEFAULT_LOCALE;
+  }
+}
+
 /** Prefix a site path with locale (English paths stay unprefixed). */
 export function localizePath(path: string, locale: Locale): string {
   const normalized = path.startsWith('/') ? path : `/${path}`;

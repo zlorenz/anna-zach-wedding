@@ -138,16 +138,18 @@ const mapsApi = Boolean(mapConfig?.airport || mapConfig?.route);
               set:html={essentials.visa.bodyHtml}
             />
           </header>
-          <p class="az-travel__actions mb-0">
-            <a
-              class="az-travel__button az-travel__button--outline-light"
-              href={essentials.visa.buttonUrl}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              {essentials.visa.buttonLabel}
-            </a>
-          </p>
+          {essentials.visa.buttonLabel && essentials.visa.buttonUrl && (
+            <p class="az-travel__actions mb-0">
+              <a
+                class="az-travel__button az-travel__button--outline-light"
+                href={essentials.visa.buttonUrl}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {essentials.visa.buttonLabel}
+              </a>
+            </p>
+          )}
         </div>
         <div class="col-lg-4 az-travel-essentials__visa-aside">
           <aside class="az-travel-callout az-travel-callout--tip">

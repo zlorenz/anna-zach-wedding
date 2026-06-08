@@ -3,7 +3,7 @@
     {
       "id": "featured-venue",
       "source": "featured",
-      "title": "Nha Trang Marriott Resort & Spa, Hon Tre Island",
+      "title": "Nha Trang Marriott, остров Хон Тре",
       "lat": 12.2185938,
       "lng": 109.252534,
       "isWeddingVenue": true,
@@ -19,7 +19,7 @@
       "lng": 109.2151318,
       "isWeddingVenue": false,
       "pricing": "",
-      "areaLifestyle": "Посадка на канатную дорогу или паром Vinpearl на остров Хон Тре. У Marriott есть стойка — помогут с билетами и временем.",
+      "areaLifestyle": "Посадка на канатную дорогу или паром Vinpearl на остров Хон Тре. У Marriott есть стойка, помогут с билетами и временем.",
       "url": "https://maps.app.goo.gl/YRTaNB2vNE9k64Ty8"
     },
     {
@@ -30,7 +30,7 @@
       "lng": 109.2398966,
       "isWeddingVenue": false,
       "pricing": "",
-      "areaLifestyle": "Точка прибытия на острове после канатной дороги или парома. Следуйте указаниям персонала к шаттлам — довезут до отеля.",
+      "areaLifestyle": "Точка прибытия на острове после канатной дороги или парома. Следуйте указаниям персонала к шаттлам, довезут до отеля.",
       "url": "https://www.google.com/maps/place/Vinpearl+Internal+Terminal/@12.2135707,109.2398966"
     },
     {
@@ -47,7 +47,7 @@
     {
       "id": "pick-1",
       "source": "pick",
-      "title": "Four Points by Sheraton",
+      "title": "Four Points by Sheraton Nha Trang",
       "lat": 12.2456687,
       "lng": 109.1934244,
       "isWeddingVenue": false,
@@ -58,7 +58,7 @@
     {
       "id": "pick-2",
       "source": "pick",
-      "title": "The Costa Residences",
+      "title": "The Costa Nha Trang Residences",
       "lat": 12.2443127,
       "lng": 109.1957983,
       "isWeddingVenue": false,
@@ -74,7 +74,7 @@
       "lng": 109.1951742,
       "isWeddingVenue": false,
       "pricing": "$",
-      "areaLifestyle": "Современный, чистый, минималистичный — свежий и аккуратный.",
+      "areaLifestyle": "Современный чистый отель с минималистичным дизайном. Популярен у туристов из России.",
       "url": "https://maps.app.goo.gl/NWJ7ejvwkt5LkU3KA"
     },
     {
@@ -91,7 +91,7 @@
     {
       "id": "pick-5",
       "source": "pick",
-      "title": "Citadines Bayfront",
+      "title": "Citadines Bayfront Nha Trang",
       "lat": 12.236219,
       "lng": 109.1968526,
       "isWeddingVenue": false,
@@ -102,7 +102,7 @@
     {
       "id": "pick-6",
       "source": "pick",
-      "title": "Adamas Boutique",
+      "title": "Adamas Boutique Hotel",
       "lat": 12.2335651,
       "lng": 109.1959629,
       "isWeddingVenue": false,
@@ -148,7 +148,7 @@
         "lat": 12.2135707,
         "lng": 109.2398966
       },
-      "durationText": "10 min",
+      "durationText": "10 мин.",
       "distanceText": "Канатная дорога / паром"
     },
     {
