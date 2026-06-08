@@ -1,0 +1,15 @@
+/**
+ * Remsen Script TTF — Three Islands Press (MyFonts webfont kit)
+ * Build ID 3867246. Subject to your MyFonts / Monotype EULA; do not redistribute files.
+ *
+ * @see README.txt in this folder
+ */
+@font-face {
+  font-family: "RemsenScriptTTF";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url("font.woff2") format("woff2"),
+    url("font.woff") format("woff");
+}

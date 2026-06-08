@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { faqData, siteData } from '../lib/content';
+import { assetUrl } from '../lib/photos';
+
+const { title, questions } = faqData;
+---
+
+<BaseLayout title={`FAQ · ${siteData.name}`} bodyClass="page-faq">
+  <section class="az-section az-faq" aria-labelledby="az-faq-heading">
+    <div class="container az-page-width">
+      {
+        questions.length > 0 ? (
+          <div class="az-faq__intro">
+            {title && <h1 id="az-faq-heading" class="az-faq__title">{title}</h1>}
+            <button
+              type="button"
+              class="az-faq__toggle-all"
+              data-az-faq-toggle-all
+              aria-expanded="false"
+            >
+              Expand all
+            </button>
+          </div>
+        ) : (
+          title && <h1 id="az-faq-heading" class="az-faq__title">{title}</h1>
+        )
+      }
+      {
+        questions.length > 0 && (
+          <div class="az-faq__layout" data-az-faq>
+            <div class="az-faq__list" role="list">
+              {
+                questions.map((row, index) => (
+                  <div
+                    class="az-faq__item"
+                    role="listitem"
+                    data-tooltip-color={row.tooltipColor}
+                  >
+                    <div class="az-faq__divider" aria-hidden="true"></div>
+                    <button
+                      type="button"
+                      class="az-faq__question"
+                      id={`az-faq-item-${index}`}
+                      aria-expanded="false"
+                      aria-controls={`az-faq-item-${index}-panel`}
+                      data-az-faq-trigger
+                    >
+                      <span class="az-faq__bullet" aria-hidden="true">►</span>
+                      <span class="az-faq__question-text">{row.question}</span>
+                    </button>
+                    <div
+                      id={`az-faq-item-${index}-panel`}
+                      class="az-faq__answer"
+                      role="region"
+                      aria-labelledby={`az-faq-item-${index}`}
+                      hidden
+                    >
+                      {row.answer
+                        .split(/\n+/)
+                        .map((line) => line.trim())
+                        .filter(Boolean)
+                        .map((line) => (
+                          <p set:html={line} />
+                        ))}
+                      {row.images && row.images.length > 0 ? (
+                        <div
+                          class="az-faq__answer-images"
+                          role="group"
+                          aria-label={row.imagesGalleryAlt || 'Answer images'}
+                        >
+                          <div class="az-faq__answer-images-row">
+                            {row.images.slice(0, 2).map((img) => (
+                              <img
+                                src={assetUrl(img.file)}
+                                alt={img.alt || ''}
+                                loading="lazy"
+                                decoding="async"
+                              />
+                            ))}
+                          </div>
+                          {row.images.length > 2 && (
+                            <div class="az-faq__answer-images-row">
+                              {row.images.slice(2, 4).map((img) => (
+                                <img
+                                  src={assetUrl(img.file)}
+                                  alt={img.alt || ''}
+                                  loading="lazy"
+                                  decoding="async"
+                                />
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        row.image && (
+                          <img
+                            class="az-faq__answer-image"
+                            src={assetUrl(row.image)}
+                            alt={row.imageAlt || ''}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        )
+                      )}
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        )
+      }
+    </div>
+  </section>
+  <script slot="scripts" src="/assets/js/faq-accordion.js" defer></script>
+</BaseLayout>

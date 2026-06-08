@@ -1,0 +1,36 @@
+---
+import site from '../data/site.json';
+import home from '../data/home.json';
+import { brandNavDark, brandNavLight } from '../lib/photos';
+---
+
+<footer id="footer" class="az-footer">
+  <div class="az-footer__inner">
+    <a class="az-footer__brand" href="/" rel="home">
+      <img
+        class="az-footer__logo az-footer__logo--on-light"
+        src={brandNavDark}
+        alt={site.name}
+        width="120"
+        height="130"
+        loading="lazy"
+        decoding="async"
+      />
+      <img
+        class="az-footer__logo az-footer__logo--on-dark"
+        src={brandNavLight}
+        alt=""
+        width="120"
+        height="130"
+        loading="lazy"
+        decoding="async"
+        aria-hidden="true"
+      />
+    </a>
+    <hr class="az-footer__rule" aria-hidden="true" />
+    <p class="az-footer__meta">
+      <span class="az-footer__meta-line">{home.eventLocation}</span>
+      <span class="az-footer__meta-line">{home.eventDate}</span>
+    </p>
+  </div>
+</footer>

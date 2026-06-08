@@ -1,0 +1,93 @@
+# Itinerary page — edit with normal punctuation (ò, &, —, etc.).
+# introHtml: optional HTML above the wedding-day timeline (leave empty to hide).
+# typeClass (wedding day): ceremony | reception | cocktails | photos | party | travel | other
+
+introHtml: ""
+
+weddingDay:
+  - time: "3:30 pm"
+    title: Guest Arrival
+    descriptionHtml: "<p>Guests arrive and are welcomed to the ceremony area.</p>"
+    location: "Marriott Hòn Tre Island Resort & Spa"
+    featured: false
+    typeClass: other
+
+  - time: "4:00 pm - 4:45 pm"
+    title: Ceremony
+    descriptionHtml: "<p>The wedding ceremony overlooking the ocean.</p>"
+    location: "Marriott Beach & Lawn Area"
+    featured: true
+    typeClass: ceremony
+
+  - time: "5:00 pm - 6:00 pm"
+    title: Cocktail Hour
+    descriptionHtml: "<p>Drinks and light bites while we take photos.</p>"
+    location: "Marriott Beach & Lawn Area"
+    featured: false
+    typeClass: cocktails
+
+  - time: "6:00 pm - 9:30 pm"
+    title: Reception Dinner & Speeches
+    descriptionHtml: "<p>Dinner, speeches, and celebration.</p>"
+    location: "Marriott Beach & Lawn Area"
+    featured: true
+    typeClass: reception
+
+  - time: "9:30 pm"
+    title: After Party
+    descriptionHtml: "<p>Late-night celebration with music and drinks at a bar in the city on the mainland.</p>"
+    location: "Location to be announced"
+    featured: false
+    typeClass: party
+
+# multiDay: set highlight: true on the main wedding day (shows “Wedding day” label + accent styling)
+multiDay:
+  - label: Rehearsal Dinner
+    date: "Dec 4, 2026"
+    descriptionHtml: ""
+    highlight: false
+    events:
+      - time: "6:30 pm - 9:30 pm"
+        title: Rehearsal Dinner
+        descriptionHtml: "<p>Location to be announced. By invitation only for close friends, family, and the wedding party.</p>"
+        externalUrl: ""
+        externalLabel: ""
+        typeClass: other
+
+  - label: After Party
+    date: "Dec 5, 2026"
+    descriptionHtml: ""
+    highlight: true
+    events:
+      - time: "4:00 pm - 5:00 pm"
+        title: Wedding Ceremony
+        descriptionHtml: ""
+        externalUrl: ""
+        externalLabel: ""
+        typeClass: ceremony
+
+      - time: "6:00 pm - 9:30 pm"
+        title: Reception Dinner
+        descriptionHtml: ""
+        externalUrl: ""
+        externalLabel: ""
+        typeClass: reception
+
+      - time: "9:30 pm"
+        title: After Party
+        descriptionHtml: ""
+        externalUrl: ""
+        externalLabel: ""
+        typeClass: party
+
+  - label: Post-Wedding Hangout
+    date: "Dec 6, 2026"
+    descriptionHtml: ""
+    highlight: false
+    events:
+      - time: "12:00 pm - 4:00 pm"
+        title: Post-Wedding Hangout
+        descriptionHtml: "<p>An open-house brunch with mimosas and finger food—drop in whenever you like and stay as long as you want. No set schedule, just some extra time to hang out with us.</p>"
+        externalUrl: ""
+        externalLabel: ""
+        typeClass: other

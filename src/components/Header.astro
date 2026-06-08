@@ -1,0 +1,135 @@
+---
+import site from '../data/site.json';
+import { brandNavDark, brandNavLight } from '../lib/photos';
+
+interface Props {
+  isHome?: boolean;
+}
+
+const { isHome = false } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+function isActive(href: string) {
+  return currentPath === href || currentPath === href.replace(/\/$/, '');
+}
+
+const navLinks = site.nav.filter((item) => !item.href.includes('rsvp'));
+const rsvpItem = site.nav.find((item) => item.href.includes('rsvp'));
+---
+
+<header>
+  <nav
+    id="header"
+    class:list={[
+      'navbar',
+      'navbar-expand-md',
+      'az-nav-scroll',
+      isHome && 'az-nav-over-dark',
+    ]}
+  >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/" rel="home">
+        <img
+          class="az-brand-symbol az-brand-symbol--nav"
+          src={isHome ? brandNavLight : brandNavDark}
+          data-brand-dark={brandNavDark}
+          data-brand-light={brandNavLight}
+          alt={site.name}
+          width="120"
+          height="130"
+        />
+      </a>
+
+      <div class="az-mobile-header-actions ms-auto d-md-none">
+        {
+          rsvpItem && (
+            <a
+              href={rsvpItem.href}
+              class:list={[
+                'az-mobile-header-rsvp',
+                isActive(rsvpItem.href) && 'is-active',
+              ]}
+              aria-current={isActive(rsvpItem.href) ? 'page' : undefined}
+            >
+              {rsvpItem.label}
+            </a>
+          )
+        }
+        <button
+          class="navbar-toggler az-mobile-nav__toggle"
+          type="button"
+          data-az-mobile-nav-toggle
+          aria-controls="az-mobile-nav"
+          aria-expanded="false"
+          aria-label="Open menu"
+        >
+          <span class="az-mobile-nav__toggle-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div id="navbar" class="collapse navbar-collapse d-none d-md-flex">
+        <ul class="navbar-nav az-nav-menu ms-auto align-items-md-center gap-md-2">
+          {
+            site.nav.map((item) => {
+              const active = isActive(item.href);
+              return (
+                <li class:list={['nav-item', active && 'is-active']}>
+                  <a
+                    href={item.href}
+                    class:list={['nav-link', active && 'active']}
+                    aria-current={active ? 'page' : undefined}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <aside
+    id="az-mobile-nav"
+    class="az-mobile-nav"
+    aria-hidden="true"
+    inert
+  >
+    <div class="az-mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <nav class="az-mobile-nav__nav" aria-label="Main">
+        <ul class="az-mobile-nav__list">
+          {
+            navLinks.map((item) => {
+              const active = isActive(item.href);
+              return (
+                <li class:list={['az-mobile-nav__item', active && 'is-active']}>
+                  <a
+                    href={item.href}
+                    class:list={['az-mobile-nav__link', active && 'is-active']}
+                    aria-current={active ? 'page' : undefined}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              );
+            })
+          }
+          {
+            rsvpItem && (
+              <li class:list={['az-mobile-nav__item', isActive(rsvpItem.href) && 'is-active']}>
+                <a
+                  href={rsvpItem.href}
+                  class:list={['az-mobile-nav__link', isActive(rsvpItem.href) && 'is-active']}
+                  aria-current={isActive(rsvpItem.href) ? 'page' : undefined}
+                >
+                  {rsvpItem.label}
+                </a>
+              </li>
+            )
+          }
+        </ul>
+      </nav>
+    </div>
+  </aside>
+</header>

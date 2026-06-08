@@ -1,0 +1,64 @@
+---
+import { getPhotoSlot, getResponsivePhotoUrls } from '../lib/photos';
+
+interface Props {
+  smallSlot: string;
+  largeSlot: string;
+  /** Single image on phones; falls back to `largeSlot` when unset */
+  mobileSlot?: string;
+  class?: string;
+  ariaLabel?: string;
+}
+
+const {
+  smallSlot,
+  largeSlot,
+  mobileSlot = 'travel.offsetMobile',
+  class: className = '',
+  ariaLabel = 'Travel image highlights',
+} = Astro.props;
+
+const small = getResponsivePhotoUrls(smallSlot);
+const large = getResponsivePhotoUrls(largeSlot);
+const mobile = getResponsivePhotoUrls(mobileSlot);
+const smallAlt = getPhotoSlot(smallSlot)?.alt || '';
+const largeAlt = getPhotoSlot(largeSlot)?.alt || '';
+const mobileAlt = getPhotoSlot(mobileSlot)?.alt || largeAlt;
+const mobileImage = mobile.mobile;
+const desktopImage = large.desktop;
+---
+
+<section
+  class:list={[
+    'az-travel',
+    'az-travel__section',
+    'az-travel__section--image-breaks',
+    'az-travel__section--image-breaks-offset',
+    className,
+  ]}
+  aria-label={ariaLabel}
+>
+  <div class="container az-page-width">
+    <div class="row gy-4 gx-lg-5 align-items-center az-travel-offset__row">
+      <div class="col-lg-5 order-lg-1 d-none d-lg-block az-travel-offset__col az-travel-offset__col--small">
+        <div class="az-travel-image-break__tile az-travel-image-break__tile--small">
+          <img src={small.desktop} alt={smallAlt} loading="lazy" decoding="async" />
+        </div>
+      </div>
+      <div class="col-12 col-lg-7 order-lg-2 az-travel-offset__col az-travel-offset__col--primary">
+        <div
+          class="az-travel-image-break__tile az-travel-image-break__tile--large az-travel-offset__tile--divider"
+        >
+          {mobileImage !== desktopImage ? (
+            <picture>
+              <source media="(max-width: 991.98px)" srcset={mobileImage} />
+              <img src={desktopImage} alt={mobileAlt} loading="lazy" decoding="async" />
+            </picture>
+          ) : (
+            <img src={desktopImage} alt={largeAlt} loading="lazy" decoding="async" />
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+# Accommodation page — edit with normal punctuation (’, —, etc.).
+
+intro:
+  pageTitle: Accomodation
+  copy: |
+    You have plenty of good ways to stay for the wedding weekend. The easiest option is the wedding resort venue itself, where all main events will take place. If you'd rather choose something different, we've also included a few nearby alternatives and a simple hotel matcher below.
+
+featured:
+  eyebrow: Primary recommendation
+  title: Nha Trang Marriott Resort & Spa, Hon Tre Island
+  tagline: Simplest option for the weekend.
+  reasons:
+    - Main wedding events will take place here, so logistics are easiest
+    - Best option if you want to stay close to other guests and avoid extra transfers
+    - Most seamless choice for a short wedding weekend with minimal planning
+  bookLabel: Book resort
+  bookUrl: https://maps.app.goo.gl/kpG5MYX2LGKW8xFM8
+  note: We may share a wedding room block or booking instructions closer to the date. For now, you can browse rates directly through the resort.
+
+picks:
+  title: Quick picks
+
+airbnb:
+  heading: Apartments & Airbnb
+  copy: |
+    Airbnb or apartment-style stays can work well for longer trips, families, or groups who want more space. For a short wedding weekend, hotels will usually be easier for transport, timing, and staying connected with other guests.

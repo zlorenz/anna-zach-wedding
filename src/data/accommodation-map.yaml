@@ -1,0 +1,16 @@
+# Accommodation — dark map section copy
+# Edit with normal punctuation (’, —, etc.). HTML allowed in paragraphs (<strong>, etc.).
+
+title: Getting to the venue
+
+intro:
+  - |
+    The map below shows the wedding venue on Hon Tre Island, the Vinpearl terminals on the mainland and island, and our recommended stays nearby.
+  - |
+    If you stay on the mainland, the route is simple. Go to the Vinpearl terminal, take the cable car or ferry across (both around 10 minutes), then take Marriott's shuttle to the resort. From a typical mainland hotel in the city, expect 30–40 minutes door to door. Once you're there, signs and staff will make the rest straightforward.
+
+legendRecommendedStays: Recommended hotels
+legendWeddingVenue: Wedding venue
+legendTerminal: Ferry & cable car terminals
+legendDriveRoute: Drive (Grab / taxi)
+legendCrossingRoute: Cable car / ferry

@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeQuickNav from '../components/HomeQuickNav.astro';
+import { homeData, homeWelcomeData, siteData } from '../lib/content';
+import { getHeroBackgroundUrls, brandHeroWordmark } from '../lib/photos';
+
+const heroBackground = getHeroBackgroundUrls();
+---
+
+<BaseLayout title={siteData.name} isHome>
+  <section class="az-hero text-white">
+    <div
+      class="az-hero-bg az-hero-bg--desktop"
+      style={`background-image: url('${heroBackground.desktop}');`}
+      aria-hidden="true"
+    ></div>
+    <div
+      class="az-hero-bg az-hero-bg--mobile"
+      style={`background-image: url('${heroBackground.mobile}');`}
+      aria-hidden="true"
+    ></div>
+    <div class="az-hero-overlay"></div>
+    <div class="container az-hero__container">
+      <div class="row">
+        <div class="col-lg-8 az-hero-content">
+          <h1 class="az-hero-title mb-0">
+            <img
+              class="az-brand-symbol az-brand-symbol--hero"
+              src={brandHeroWordmark}
+              alt={siteData.name}
+            />
+          </h1>
+          <div class="az-hero-meta mb-4">
+            <p class="az-hero-meta-item az-hero-meta-item--date mb-0 d-none d-md-block">{homeData.eventDate}</p>
+            <p class="az-hero-meta-item az-hero-meta-item--date mb-0 d-md-none">{homeData.eventDateShort}</p>
+            <p class="az-hero-meta-item az-hero-meta-item--location mb-0 d-none d-md-block">{homeData.eventLocation}</p>
+            <p class="az-hero-meta-item az-hero-meta-item--location mb-0 d-md-none">{homeData.eventLocationShort}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="az-section az-home-welcome">
+    <div class="container az-page-width">
+      <div class="row">
+        <div class="col-lg-11">
+          <div
+            class="az-home-welcome__copy az-prose"
+            data-az-welcome-reveal
+          >
+            {homeWelcomeData.paragraphs.map((paragraph) => (
+              <p data-welcome-text={paragraph}>{paragraph}</p>
+            ))}
+            {homeWelcomeData.signature && (
+              <p class="az-home-welcome__signature">
+                <span class="az-signature-clip" data-az-signature-reveal>
+                  <span class="az-signature-reveal">{homeWelcomeData.signature}</span>
+                </span>
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <HomeQuickNav />
+  <script slot="scripts" src="/assets/js/home-welcome-reveal.js" defer></script>
+  <script slot="scripts" src="/assets/js/home-signature-reveal.js" defer></script>
+</BaseLayout>

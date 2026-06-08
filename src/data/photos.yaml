@@ -1,0 +1,79 @@
+# Image slots — change `file` paths to swap photos site-wide.
+# Engagement library: public/assets/photos/engagement/ (all Anna & Zach session JPGs)
+# Brand logos: public/assets/brand/
+
+slots:
+  home.heroBackground:
+    file: photos/engagement/20260404-NS-AZ-5222.jpg
+    alt: Anna and Zach
+
+  # Home hero on viewports ≤768px — set a portrait-friendly crop; leave file empty to reuse desktop
+  home.heroBackgroundMobile:
+    file: photos/engagement/20260404-NS-AZ-5164.jpg
+    alt: Anna and Zach
+
+  home.heroWordmark:
+    file: brand/anna-zach-symbol-light.png
+    alt: Anna & Zach
+
+  travel.triptychLeft:
+    file: photos/engagement/20260404-NS-AZ-5398.jpg
+    alt: ""
+
+  travel.triptychCenter:
+    file: photos/engagement/20260404-NS-AZ-5848.jpg
+    alt: ""
+
+  travel.triptychRight:
+    file: photos/engagement/20260404-NS-AZ-5689.jpg
+    alt: ""
+
+  # Travel top triptych on phones (≤991px) — left + right only; omit `file` to reuse desktop
+  travel.triptychLeftMobile:
+    file: photos/engagement/20260404-NS-AZ-5909.jpg
+    alt: ""
+
+  travel.triptychRightMobile:
+    file: photos/engagement/20260404-NS-AZ-5926.jpg
+    alt: ""
+
+  travel.offsetSmall:
+    file: photos/engagement/20260404-NS-AZ-5591.jpg
+    alt: ""
+
+  travel.offsetLarge:
+    file: photos/engagement/20260404-NS-AZ-5419.jpg
+    alt: ""
+
+  # Travel offset divider on phones (≤991px) — single image; omit `file` to reuse offsetLarge
+  travel.offsetMobile:
+    file: photos/engagement/20260404-NS-AZ-5629.jpg
+    alt: ""
+
+  accommodation.dividerLeft:
+    file: photos/engagement/20260404-NS-AZ-5788.jpg
+    alt: ""
+
+  accommodation.dividerCenter:
+    file: photos/engagement/20260404-NS-AZ-5721.jpg
+    alt: ""
+
+  accommodation.dividerRight:
+    file: photos/engagement/20260404-NS-AZ-5763.jpg
+    alt: ""
+
+  itinerary.dividerLeft:
+    file: photos/engagement/20260404-NS-AZ-5349.jpg
+    alt: ""
+
+  itinerary.dividerCenter:
+    file: photos/engagement/20260404-NS-AZ-5962.jpg
+    alt: ""
+
+  itinerary.dividerRight:
+    file: photos/engagement/20260404-NS-AZ-5637.jpg
+    alt: ""
+
+brand:
+  navOnLightBackground: brand/initials-symbol-dark.png
+  navOnDarkBackground: brand/initials-symbol-light.png

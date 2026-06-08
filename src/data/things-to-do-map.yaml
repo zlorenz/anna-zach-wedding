@@ -1,0 +1,14 @@
+# Things to Do — map section copy (above the Google Map)
+# Edit with normal punctuation. HTML allowed in intro paragraphs.
+
+title: Our Nha Trang picks
+
+intro:
+  - |
+    We’ve put together a short list of restaurants, nightlife, sightseeing, and entertainment we love around town. Tap a pin for a quick note, or open the spot in Google Maps for directions.
+
+legendRestaurants: Restaurants
+legendNightlife: Nightlife
+legendSightseeing: Sightseeing
+legendEntertainment: Entertainment
+filterToggleAll: All

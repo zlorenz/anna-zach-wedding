@@ -1,0 +1,19 @@
+---
+import { siteData } from '../lib/content';
+---
+
+<nav class="az-section az-home-quick-nav" aria-label="Site sections">
+  <div class="container az-page-width">
+    <ul class="az-home-quick-nav__list">
+      {
+        siteData.nav.map((item) => (
+          <li class="az-home-quick-nav__item">
+            <a class="az-home-quick-nav__link" href={item.href}>
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,127 @@
+---
+import { readdirSync } from 'node:fs';
+import path from 'node:path';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteData } from '../lib/content';
+import { assetUrl, getManifest, getPhotoUrl } from '../lib/photos';
+
+if (!import.meta.env.DEV) {
+  return Astro.redirect('/');
+}
+
+const manifest = getManifest();
+const engagementDir = path.join(process.cwd(), 'public/assets/photos/engagement');
+const engagement = readdirSync(engagementDir)
+  .filter((name) => /\.(jpe?g|png|webp)$/i.test(name))
+  .map((name) => ({
+    name,
+    url: assetUrl(`photos/engagement/${name}`),
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const slots = Object.entries(manifest.slots).map(([id, slot]) => ({
+  id,
+  url: getPhotoUrl(id),
+  file: slot.file,
+  alt: slot.alt || '',
+}));
+
+const engagementJson = JSON.stringify(engagement);
+---
+
+<BaseLayout title={`Photo preview · ${siteData.name}`} bodyClass="page-photos-preview">
+  <section class="az-section">
+    <div class="container az-page-width">
+      <h1 class="h3 mb-2">Photo preview (dev only)</h1>
+      <p class="text-muted mb-4">
+        Click a photo to zoom. Use <kbd>←</kbd> <kbd>→</kbd> to compare, <kbd>Esc</kbd> to close,
+        <kbd>F</kbd> to favorite. Hearts save to your browser. Assign slots in
+        <code>src/data/photos.yaml</code>.
+      </p>
+
+      <h2 class="h5 mb-3">Current slots</h2>
+      <div class="row g-4 mb-5">
+        {
+          slots.map((slot) => (
+            <div class="col-md-6 col-lg-4">
+              <article class="border rounded overflow-hidden bg-white h-100">
+                <img
+                  src={slot.url}
+                  alt={slot.alt}
+                  class="w-100"
+                  style="aspect-ratio: 4/3; object-fit: cover;"
+                  loading="lazy"
+                />
+                <div class="p-3 small">
+                  <p class="mb-1 fw-semibold">{slot.id}</p>
+                  <p class="mb-0 text-muted font-monospace" style="font-size: 0.8rem;">
+                    {slot.file}
+                  </p>
+                </div>
+              </article>
+            </div>
+          ))
+        }
+      </div>
+
+      <div id="az-photos-preview" data-photos={engagementJson}>
+        <div class="az-photos-favorites-panel mb-4">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+            <h2 class="h5 mb-0">
+              Favorites (<span data-az-favorites-count>0</span>)
+            </h2>
+            <div class="d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-sm btn-outline-dark" data-az-favorites-copy>
+                Copy filenames
+              </button>
+              <button type="button" class="btn btn-sm btn-outline-secondary" data-az-favorites-clear>
+                Clear all
+              </button>
+            </div>
+          </div>
+          <p class="small text-muted mb-2">
+            Drag chips to reorder, or drag a thumbnail here. Use the heart on each photo or in zoom
+            view. Click × to unfavorite.
+          </p>
+          <div class="az-photos-favorites-list" data-az-favorites-list></div>
+          <label class="form-label small text-muted mt-3 mb-1">Favorite filenames</label>
+          <pre class="az-photos-favorites-filenames" data-az-favorites-filenames>(none)</pre>
+        </div>
+
+        <h2 class="h5 mb-3">Engagement library ({engagement.length} photos)</h2>
+        <div class="row g-3" data-az-photos-grid></div>
+
+        <div
+          class="az-photos-lightbox"
+          data-az-photos-lightbox
+          hidden
+          role="dialog"
+          aria-modal="true"
+          aria-label="Photo zoom"
+        >
+          <button type="button" class="az-photos-lightbox__backdrop" data-az-lightbox-close aria-label="Close"></button>
+          <div class="az-photos-lightbox__panel">
+            <button type="button" class="az-photos-lightbox__close" data-az-lightbox-close aria-label="Close">×</button>
+            <button type="button" class="az-photos-lightbox__nav az-photos-lightbox__nav--prev" data-az-lightbox-prev aria-label="Previous photo">‹</button>
+            <button type="button" class="az-photos-lightbox__nav az-photos-lightbox__nav--next" data-az-lightbox-next aria-label="Next photo">›</button>
+            <div class="az-photos-lightbox__stage">
+              <img class="az-photos-lightbox__img" data-az-lightbox-img alt="" />
+            </div>
+            <div class="az-photos-lightbox__toolbar">
+              <button type="button" class="az-photos-lightbox__heart" data-az-lightbox-heart aria-label="Add to favorites" aria-pressed="false">
+                <span class="az-photos-heart-icon" aria-hidden="true">♡</span>
+              </button>
+              <div class="az-photos-lightbox__meta">
+                <p class="az-photos-lightbox__filename mb-0" data-az-lightbox-filename></p>
+                <p class="az-photos-lightbox__counter mb-0 text-muted" data-az-lightbox-counter></p>
+              </div>
+            </div>
+            <p class="az-photos-lightbox__hint small text-muted mb-0">Arrow keys · <kbd>F</kbd> favorite · <kbd>Esc</kbd> close</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script slot="scripts" src="/assets/js/photos-preview.js" defer></script>
+</BaseLayout>

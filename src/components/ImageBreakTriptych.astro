@@ -1,0 +1,94 @@
+---
+import { getPhotoSlot, getPhotoUrl, getResponsivePhotoUrls } from '../lib/photos';
+
+interface Props {
+  leftSlot: string;
+  centerSlot: string;
+  rightSlot: string;
+  class?: string;
+  ariaLabel?: string;
+  containerClass?: string;
+  rowClass?: string;
+  columnClass?: string;
+  /** Override center column width (e.g. col-md-6 on accommodation divider). */
+  centerColumnClass?: string;
+  /** Override side column width when centerColumnClass is set (default col-md-3). */
+  sideColumnClass?: string;
+  /** Phones: 2 hides the center tile and shows left + right only. */
+  mobileColumns?: 2 | 3;
+}
+
+const {
+  leftSlot,
+  centerSlot,
+  rightSlot,
+  class: className = '',
+  ariaLabel = 'Image highlights',
+  containerClass = 'container-fluid px-3 px-lg-4',
+  rowClass = 'row g-3 g-lg-4 align-items-center',
+  columnClass = 'col-md-4',
+  centerColumnClass,
+  sideColumnClass = 'col-md-3',
+  mobileColumns = 3,
+} = Astro.props;
+
+const tiles = [
+  { slot: leftSlot, modifier: 'left' },
+  { slot: centerSlot, modifier: 'center' },
+  { slot: rightSlot, modifier: 'right' },
+] as const;
+
+function tileColumnClass(modifier: (typeof tiles)[number]['modifier']): string {
+  if (mobileColumns === 2) {
+    if (modifier === 'center') return 'd-none d-md-block col-md-4';
+    return 'col-6 col-md-4';
+  }
+  if (centerColumnClass) {
+    if (modifier === 'center') return centerColumnClass;
+    return sideColumnClass;
+  }
+  return columnClass;
+}
+---
+
+<section
+  class:list={['az-section', 'az-image-break', className]}
+  aria-label={ariaLabel}
+>
+  <div class={containerClass}>
+    <div class={rowClass}>
+      {
+        tiles.map(({ slot, modifier }) => {
+          const { desktop, mobile } = getResponsivePhotoUrls(slot);
+          const alt = getPhotoSlot(slot)?.alt || '';
+
+          return (
+            <div
+              class:list={[
+                'az-travel-image-break__tile-col',
+                `az-travel-image-break__tile-col--${modifier}`,
+                tileColumnClass(modifier),
+              ]}
+            >
+              <div
+                class:list={[
+                  'az-travel-image-break__tile',
+                  `az-travel-image-break__tile--${modifier}`,
+                ]}
+              >
+                {mobile !== desktop ? (
+                  <picture>
+                    <source media="(max-width: 991.98px)" srcset={mobile} />
+                    <img src={desktop} alt={alt} loading="lazy" decoding="async" />
+                  </picture>
+                ) : (
+                  <img src={desktop} alt={alt} loading="lazy" decoding="async" />
+                )}
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

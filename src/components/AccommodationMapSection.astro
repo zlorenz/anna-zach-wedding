@@ -1,0 +1,105 @@
+---
+import { accommodationMapData } from '../lib/content';
+
+const {
+  title,
+  intro,
+  legendRecommendedStays,
+  legendWeddingVenue,
+  legendTerminal,
+  legendDriveRoute,
+  legendCrossingRoute,
+} = accommodationMapData;
+---
+
+<section
+  class="az-section az-accommodation-map az-section--dark"
+  aria-labelledby="az-accommodation-map-venue-title"
+>
+  <div class="container az-page-width">
+    <div class="row">
+      <div class="col-12 col-lg-10">
+        <div class="az-accommodation-map__intro az-prose">
+          <header class="az-accommodation-map__header">
+            <h2 id="az-accommodation-map-venue-title" class="az-accommodation-map__title">{title}</h2>
+          </header>
+          {intro.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </div>
+    </div>
+    <div class="az-accommodation-map__map-wrap">
+      <div class="az-accommodation-map__legend" role="list" aria-label="Map legend">
+        <span class="az-accommodation-map__legend-item" role="listitem">
+          <svg
+            class="az-accommodation-map__legend-pin"
+            viewBox="0 0 24 36"
+            width="16"
+            height="24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              fill="#EA4335"
+              d="M12 0C5.373 0 0 5.373 0 12c0 8.25 12 24 12 24s12-15.75 12-24C24 5.373 18.627 0 12 0zm0 17.25a5.25 5.25 0 1 1 0-10.5 5.25 5.25 0 0 1 0 10.5z"
+            ></path>
+          </svg>
+          <span>{legendRecommendedStays}</span>
+        </span>
+        <span class="az-accommodation-map__legend-item" role="listitem">
+          <svg
+            class="az-accommodation-map__legend-star"
+            viewBox="0 0 24 24"
+            width="18"
+            height="18"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              fill="#EA4335"
+              stroke="#C5221F"
+              stroke-width="1"
+              stroke-linejoin="round"
+              d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+            ></path>
+          </svg>
+          <span>{legendWeddingVenue}</span>
+        </span>
+        <span class="az-accommodation-map__legend-item" role="listitem">
+          <svg
+            class="az-accommodation-map__legend-pin az-accommodation-map__legend-pin--terminal"
+            viewBox="0 0 24 36"
+            width="16"
+            height="24"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              fill="#34A853"
+              stroke="#188038"
+              stroke-width="1"
+              stroke-linejoin="round"
+              d="M12 0C5.373 0 0 5.373 0 12c0 8.25 12 24 12 24s12-15.75 12-24C24 5.373 18.627 0 12 0z"
+            ></path>
+            <circle cx="12" cy="12" r="5.25" fill="#137333"></circle>
+          </svg>
+          <span>{legendTerminal}</span>
+        </span>
+        <span class="az-accommodation-map__legend-item" role="listitem">
+          <span class="az-accommodation-map__legend-route az-accommodation-map__legend-route--drive" aria-hidden="true"></span>
+          <span>{legendDriveRoute}</span>
+        </span>
+        <span class="az-accommodation-map__legend-item" role="listitem">
+          <span class="az-accommodation-map__legend-route az-accommodation-map__legend-route--crossing" aria-hidden="true"></span>
+          <span>{legendCrossingRoute}</span>
+        </span>
+      </div>
+      <div
+        id="az-accommodation-map-canvas"
+        class="az-accommodation-map__canvas az-accommodation-map__canvas--calibrating"
+        role="region"
+        aria-label="Places on the map"
+        aria-busy="true"
+      />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,178 @@
+{
+  "places": [
+    {
+      "id": "featured-venue",
+      "source": "featured",
+      "title": "Nha Trang Marriott Resort & Spa, Hon Tre Island",
+      "lat": 12.2185938,
+      "lng": 109.252534,
+      "isWeddingVenue": true,
+      "pricing": "",
+      "areaLifestyle": "We may share a wedding room block or booking instructions closer to the date. For now, you can browse rates directly through the resort.",
+      "url": "https://maps.app.goo.gl/kpG5MYX2LGKW8xFM8"
+    },
+    {
+      "id": "vinpearl-terminal",
+      "source": "terminal",
+      "title": "Vinpearl Land Terminal",
+      "lat": 12.1975954,
+      "lng": 109.2151318,
+      "isWeddingVenue": false,
+      "pricing": "",
+      "areaLifestyle": "Mainland boarding point for the Vinpearl cable car or ferry to Hon Tre Island. Marriott has a desk here if you need directions or help with tickets and timing.",
+      "url": "https://maps.app.goo.gl/YRTaNB2vNE9k64Ty8"
+    },
+    {
+      "id": "vinpearl-island-terminal",
+      "source": "terminal",
+      "title": "Vinpearl Internal Terminal",
+      "lat": 12.2135707,
+      "lng": 109.2398966,
+      "isWeddingVenue": false,
+      "pricing": "",
+      "areaLifestyle": "Island arrival point after the cable car or ferry. Follow staff directions to the shuttles—they'll drive you to the resort.",
+      "url": "https://www.google.com/maps/place/Vinpearl+Internal+Terminal/@12.2135707,109.2398966"
+    },
+    {
+      "id": "pick-0",
+      "source": "pick",
+      "title": "Potique Hotel",
+      "lat": 12.2410245,
+      "lng": 109.1946719,
+      "isWeddingVenue": false,
+      "pricing": "$$$",
+      "areaLifestyle": "Stylish boutique hotel with a more local, design-forward feel.",
+      "url": "https://maps.app.goo.gl/CUdfo2u2sKPMRkgA7"
+    },
+    {
+      "id": "pick-1",
+      "source": "pick",
+      "title": "Four Points by Sheraton",
+      "lat": 12.2456687,
+      "lng": 109.1934244,
+      "isWeddingVenue": false,
+      "pricing": "$$",
+      "areaLifestyle": "Reliable international hotel with beachfront views and solid amenities.",
+      "url": "https://maps.app.goo.gl/eSfCu4SDqhDYhvxB6"
+    },
+    {
+      "id": "pick-2",
+      "source": "pick",
+      "title": "The Costa Residences",
+      "lat": 12.2443127,
+      "lng": 109.1957983,
+      "isWeddingVenue": false,
+      "pricing": "$$",
+      "areaLifestyle": "Spacious apartment-style living with hotel-level amenities.",
+      "url": "https://maps.app.goo.gl/2x4BFB8wL35LAQnv7"
+    },
+    {
+      "id": "pick-3",
+      "source": "pick",
+      "title": "December Hotel",
+      "lat": 12.232546,
+      "lng": 109.1951742,
+      "isWeddingVenue": false,
+      "pricing": "$",
+      "areaLifestyle": "Modern, clean, and minimal with a newer, polished feel.",
+      "url": "https://maps.app.goo.gl/NWJ7ejvwkt5LkU3KA"
+    },
+    {
+      "id": "pick-4",
+      "source": "pick",
+      "title": "Aaron Hotel",
+      "lat": 12.2356125,
+      "lng": 109.1948974,
+      "isWeddingVenue": false,
+      "pricing": "$",
+      "areaLifestyle": "Simple, budget-friendly stay in a central beachside area.",
+      "url": "https://maps.app.goo.gl/Qj6JqjpCc7Y9NPPF6"
+    },
+    {
+      "id": "pick-5",
+      "source": "pick",
+      "title": "Citadines Bayfront",
+      "lat": 12.236219,
+      "lng": 109.1968526,
+      "isWeddingVenue": false,
+      "pricing": "$$",
+      "areaLifestyle": "Flexible apartment-style hotel right by the beach.",
+      "url": "https://maps.app.goo.gl/SbYmVQPpwzsU7QiC7"
+    },
+    {
+      "id": "pick-6",
+      "source": "pick",
+      "title": "Adamas Boutique",
+      "lat": 12.2335651,
+      "lng": 109.1959629,
+      "isWeddingVenue": false,
+      "pricing": "$",
+      "areaLifestyle": "Compact, modern boutique hotel with a clean and minimal design.",
+      "url": "https://www.google.com/maps/place/Adamas+Boutique+Hotel+Nha+Trang/@12.2335651,109.1959629"
+    },
+    {
+      "id": "pick-7",
+      "source": "pick",
+      "title": "Seaside Boutique Hotel",
+      "lat": 12.239236,
+      "lng": 109.191846,
+      "isWeddingVenue": false,
+      "pricing": "$",
+      "areaLifestyle": "Relaxed, no-frills hotel close to the beach with easy access to the main promenade.",
+      "url": "https://www.google.com/maps/place/Seaside+Boutique+Hotel+Nha+Trang+Beach/@12.239236,109.191846"
+    }
+  ],
+  "journeyLegs": [
+    {
+      "id": "drive-hotels-terminal",
+      "mode": "driving",
+      "label": "Drive to terminal",
+      "origin": {
+        "lat": 12.241098,
+        "lng": 109.196486
+      },
+      "destination": {
+        "lat": 12.1975954,
+        "lng": 109.2151318
+      }
+    },
+    {
+      "id": "crossing",
+      "mode": "crossing",
+      "label": "Cable car / ferry",
+      "origin": {
+        "lat": 12.1975954,
+        "lng": 109.2151318
+      },
+      "destination": {
+        "lat": 12.2135707,
+        "lng": 109.2398966
+      },
+      "durationText": "10 min",
+      "distanceText": "Cable car / ferry"
+    },
+    {
+      "id": "drive-island-resort",
+      "mode": "driving",
+      "label": "Shuttle to resort",
+      "origin": {
+        "lat": 12.2135707,
+        "lng": 109.2398966
+      },
+      "destination": {
+        "lat": 12.2185938,
+        "lng": 109.252534
+      }
+    }
+  ],
+  "mapUi": {
+    "zoomLabelMin": 15,
+    "fitZoom": 15
+  },
+  "i18n": {
+    "ariaMap": "Places on the map",
+    "openInMaps": "Open in Google Maps",
+    "labelPricing": "Pricing",
+    "labelArea": "Area & lifestyle"
+  }
+}

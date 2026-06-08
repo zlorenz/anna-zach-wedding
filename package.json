@@ -1,0 +1,22 @@
+{
+  "name": "annaandzach",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "start": "node ./dist/server/entry.mjs",
+    "export-content": "python3 scripts/export-content.py",
+    "resolve-map-coords": "node scripts/resolve-map-coords.mjs"
+  },
+  "dependencies": {
+    "@astrojs/node": "^9.2.2",
+    "astro": "^5.7.10",
+    "yaml": "^2.9.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

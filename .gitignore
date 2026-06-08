@@ -1,67 +1,20 @@
-# --------------------------------------------------
-# WordPress Core (ignore)
-# --------------------------------------------------
+# Dependencies & build
+node_modules/
+dist/
+.astro/
 
-/wp-admin/
-/wp-includes/
-/xmlrpc.php
-/wp-*.php
-/index.php
-/license.txt
-/readme.html
+# Environment (secrets)
+.env
+.env.local
 
-# --------------------------------------------------
-# WordPress Configuration
-# --------------------------------------------------
-
-wp-config.php
-.htaccess
-
-# --------------------------------------------------
-# Uploads (media)
-# --------------------------------------------------
-
-/wp-content/uploads/
-
-# --------------------------------------------------
-# Cache / logs
-# --------------------------------------------------
-
-/wp-content/cache/
-*.log
-
-# --------------------------------------------------
-# OS junk
-# --------------------------------------------------
-
+# OS
 .DS_Store
 Thumbs.db
 
-# --------------------------------------------------
-# Cursor dev files
-# --------------------------------------------------
-
+# Cursor
 .cursor/
 .cursorignore
 .cursorindexingignore
 
-# --------------------------------------------------
-# Plugins
-# Ignore ALL plugins except custom ones
-# --------------------------------------------------
-
-/wp-content/plugins/*
-
-# (Add custom plugins here later if needed)
-# Example:
-# !/wp-content/plugins/my-custom-plugin/
-
-# --------------------------------------------------
-# Themes
-# Ignore all themes except your child theme
-# --------------------------------------------------
-
-/wp-content/themes/*
-
-# Allow your wedding child theme
-!/wp-content/themes/anna-zach-wedding-child
+# Logs
+*.log

@@ -1,0 +1,87 @@
+# FAQ page copy — edit this file with normal punctuation (’, —, etc.).
+# tooltipColor: pink_soft | blue_mist (alternates accent on open panels)
+# Answers support HTML: <strong>, <a href="/rsvp/">links</a>, etc.
+# For multiple paragraphs in an answer, use a blank line inside the | block.
+
+title: FAQ
+
+questions:
+  - question: When is the RSVP deadline?
+    answer: Let us know by <strong>October 5th, 2026</strong> so we have enough time to finalize headcount in advance.
+    tooltipColor: pink_soft
+
+  - question: What's the dress code?
+    answer: As befits the location, we’re leaning into an elegant island vibe. Think “White Lotus” style. Lightweight linens, breezy dresses, and tropical resort wear.
+    imagesGalleryAlt: Dress code inspiration — tropical resort and evening wear
+    images:
+      - file: images/faq/dress-code-women-01.png
+        alt: Women's tropical resort and evening wear
+      - file: images/faq/dress-code-women-02.png
+        alt: Women's dress code inspiration
+      - file: images/faq/dress-code-men-01.png
+        alt: Men's tropical resort wear
+      - file: images/faq/dress-code-men-02.png
+        alt: Men's dress code inspiration
+    tooltipColor: blue_mist
+
+  - question: How do I get to the wedding venue?
+    answer: The wedding takes place at the Nha Trang Marriott on Hon Tre Island, just off the coast of Nha Trang. Guests staying in the city will travel via the Vinpearl terminal, then take a quick cable car or ferry ride followed by a free resort shuttle. It’s very smooth and easy once you arrive.
+    tooltipColor: pink_soft
+
+  - question: What time should I show up for the ceremony?
+    answer: The ceremony will begin at 4:00 PM. We recommend arriving at least 30 minutes early to get settled and find your seat.
+    tooltipColor: blue_mist
+
+  - question: What time will the reception end?
+    answer: The reception will wrap up around 9:30 PM. For those who want to keep the night going, we'll have an after-party starting at 10:00 PM at our villa. Everyone is welcome—just note that this portion of the evening will be adults only.
+    tooltipColor: pink_soft
+
+  - question: Will there be an open bar?
+    answer: Absolutely. There will be a full open bar with soft drinks, beer, wine, and spirits available at cocktail hour and throughout the reception.
+    tooltipColor: blue_mist
+
+  - question: Can I bring a plus-one?
+    answer: Yes, guests are welcome to bring a plus-one or more—we only ask that you keep it reasonable. And be sure to include all additional guests when you RSVP, along with any dietary restrictions, so we can plan accordingly.
+    tooltipColor: pink_soft
+
+  - question: Are kids invited?
+    answer: Yes, your kids are more than welcome to join. Just please make sure you include them in the RSVP so we can keep an accurate headcount. We hope this can double as a fun beachside getaway for the whole family if you're planning to bring them along!
+    tooltipColor: blue_mist
+
+  - question: Will there be a post-wedding hangout?
+    answer: Yes, we'll be hosting a hangout the day after the wedding at our villa. Feel free to drop by anytime between 12:00 PM and 4:00 PM. It's a relaxed, come-and-go setup with no formal schedule—just a chance to hang out, recover, and spend a bit more time together before everyone heads home.
+    tooltipColor: pink_soft
+
+  - question: When should I book travel and accommodation?
+    answer: For international travel, we recommend booking at least 3 months in advance to get the best flight options and prices. We've put together helpful info on our <a href="/travel/">Travel page</a> and <a href="/accomodation/">Accommodation page</a> to guide you through flights, hotels, and everything else you'll need for the trip.
+    tooltipColor: blue_mist
+
+  - question: How long should I stay?
+    answer: |
+      We’ll personally be in Nha Trang from December 2–7. At minimum, we recommend arriving by December 4 (night before the wedding) and staying through December 7 so you can enjoy the wedding weekend without feeling rushed.
+
+      If you’re traveling internationally, consider turning the trip into a longer vacation. Vietnam is an amazing country to explore, and we’d love for friends and family to experience more of it while you're here. Cities like Saigon or Hanoi are well worth a visit.
+    tooltipColor: pink_soft
+
+  - question: Do I need a visa to enter Vietnam?
+    answer: It depends on your passport. U.S. citizens will need to apply for an e-visa online—it's a simple process. Russian citizens can enter visa-free for up to 45 days. For other nationalities, please check your country's requirements online. You can find more details and links on the <a href="/travel/">Travel page</a>.
+    tooltipColor: blue_mist
+
+  - question: What's the weather like in December?
+    answer: |
+      By December, the rainy season in Nha Trang is usually winding down, so we're hoping for beautiful, sunny weather.
+
+      That said, occasional showers are still possible, so it's best to plan for hot, humid conditions with a chance of rain. Light clothing, sandals, and a small rain jacket should have you covered.
+    tooltipColor: pink_soft
+
+  - question: What's the best way to get from the airport to my hotel?
+    answer: We recommend using Grab, the Southeast Asian version of Uber. It's reliable and works great for airport pickups. You can find download links on the <a href="/travel/">Travel page</a>. If you're staying at the wedding venue on Hon Tre Island, book a ride to the Vinpearl terminal on the mainland first. From there, check in with Marriott staff and take the cable car or ferry to the island, then the resort shuttle. Once you're on the mainland, Grab is also the easiest way to get around Nha Trang. If you're feeling adventurous, motorbike rentals are easy to find around the city.
+    tooltipColor: blue_mist
+
+  - question: Will I be able to use a credit card, or should I bring cash?
+    answer: Yes, major international credit cards are widely accepted at most restaurants, hotels, and shops. It's still a good idea to carry some cash for smaller vendors, local markets, or street food spots.
+    tooltipColor: pink_soft
+
+  - question: How do I get a data plan on my phone?
+    answer: The easiest option is to set up an eSIM before you travel. We have some recommended options and links on the <a href="/travel/">Travel page</a>. You can also buy a local SIM card at the airport or in the city, though the experience can be more hit-or-miss compared to setting things up in advance.
+    tooltipColor: blue_mist

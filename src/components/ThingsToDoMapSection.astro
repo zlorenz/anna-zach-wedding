@@ -1,0 +1,71 @@
+---
+import { thingsToDoMapData } from '../lib/content';
+
+const { title, intro, legendRestaurants, legendNightlife, legendSightseeing, legendEntertainment, filterToggleAll } =
+  thingsToDoMapData;
+
+const legendItems = [
+  { key: 'restaurants', label: legendRestaurants },
+  { key: 'nightlife', label: legendNightlife },
+  { key: 'sightseeing', label: legendSightseeing },
+  { key: 'entertainment', label: legendEntertainment },
+];
+---
+
+<section
+  class="az-section az-things-to-do-map"
+  aria-labelledby="az-things-to-do-map-title"
+>
+  <div class="container az-page-width">
+    <div class="row">
+      <div class="col-12 col-lg-10">
+        <div class="az-things-to-do-map__intro az-prose">
+          <header class="az-things-to-do-map__header">
+            <h2 id="az-things-to-do-map-title" class="az-things-to-do-map__title">{title}</h2>
+          </header>
+          {intro.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </div>
+    </div>
+    <div class="az-things-to-do-map__map-wrap">
+      <div
+        class="az-things-to-do-map__legend"
+        data-az-things-to-do-filters
+        role="group"
+        aria-label="Filter places on the map"
+      >
+        <button
+          type="button"
+          class="az-things-to-do-map__legend-item az-things-to-do-map__legend-item--all is-active"
+          data-az-category-filter-all
+          aria-pressed="true"
+        >
+          {filterToggleAll}
+        </button>
+        {
+          legendItems.map((item) => (
+            <button
+              type="button"
+              class:list={[
+                'az-things-to-do-map__legend-item',
+                `az-things-to-do-map__legend-item--${item.key}`,
+                'is-active',
+              ]}
+              data-az-category-filter={item.key}
+              aria-pressed="true"
+            >
+              {item.label}
+            </button>
+          ))
+        }
+      </div>
+      <div
+        id="az-things-to-do-map-canvas"
+        class="az-things-to-do-map__canvas az-things-to-do-map__canvas--calibrating"
+        role="region"
+        aria-label="Things to do around Nha Trang"
+        aria-busy="true"
+      />
+    </div>
+  </div>
+</section>

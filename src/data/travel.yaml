@@ -1,0 +1,45 @@
+# Travel page — edit with normal punctuation (’, —, etc.).
+# bodyHtml fields: optional inline HTML (<p>, <a class="az-travel__button">…</a>)
+
+airport:
+  titleLines:
+    - Arrival
+    - Airport
+  leadHtml: |
+    <p>For those of you flying in, you'll land at Cam Ranh International Airport (CRX), 24 miles south of Nha Trang. If you're coming from the States, we recommend you fly into Ho Chi Minh City first and take a domestic flight to Cam Ranh. That's typically the cheapest route.</p>
+
+transfer:
+  title: Drive to Nha Trang
+  bodyHtml: |
+    <p>Getting from the airport to Nha Trang is easy—usually less than an hour depending on your hotel location.</p>
+    <p>Be cautious of scams at the airport. Avoid local taxis and don't take rides from anyone offering outside the terminal. They're always overpriced.</p>
+    <p>We recommend booking your ride with Grab. It's just like Uber or Lyft in the U.S. so you can verify the driver's license plate. Download the app and connect a credit card before you depart.</p>
+    <p><a class="az-travel__button" href="https://www.grab.com/global/download/" target="_blank" rel="noopener noreferrer">Download Grab App</a></p>
+
+essentials:
+  eyebrow: Essentials
+  title: Everything you need to know before you go.
+  visa:
+    title: Visa Info
+    bodyHtml: |
+      <p>Most guests will need a visa to enter Vietnam. For U.S. travelers, this is a simple online process through the official eVisa system. Apply at least 2 weeks before departure to avoid any last-minute issues.</p>
+      <p>After applying online, you'll receive a letter via email within 72 hours. Print a hard copy of the visa invitation letter because you'll need to present this to airline staff when you depart.</p>
+    buttonLabel: Apply for Vietnam eVisa
+    buttonUrl: https://evisa.gov.vn/
+    callout:
+      icon: plane
+      title: Quick Tip
+      body: Print your visa letter - airlines require a hard copy at check-in.
+  sim:
+    title: SIM Cards
+    bodyHtml: |
+      <p>Staying connected in Vietnam is easy. We recommend using an eSIM so you're set up before you land. Simplest option is Airalo—just be sure to choose one of the Standard plans, not the Unlimited plans! Those will quickly throttle your data speeds.</p>
+    buttonLabel: Install eSIM Before Departure
+    buttonUrl: http://airalo.com/
+  currency:
+    title: Currency & Payments
+    bodyHtml: |
+      <p>You'll be fine with a debit or credit card. They're widely accepted at hotels, restaurants, and most businesses. It's good to carry some cash for small shops and street vendors. ATMs are easy to find and most international cards will work.</p>
+      <p>With Vietnamese Dong (VND), prices can take some getting used to at first. So many zeroes to keep track of! Don't be alarmed if your meal costs a million VND—that's only $40 bucks.</p>
+    exchangeLabel: Exchange Rate
+    exchangeValue: 1 USD ≈ 26,000 VND

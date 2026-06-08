@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteData } from '../lib/content';
+
+export const prerender = false;
+---
+
+<BaseLayout
+  title={`RSVP · ${siteData.name}`}
+  description={`RSVP for ${siteData.name}'s wedding — December 5, 2026 in Nha Trang, Vietnam.`}
+  bodyClass="page-rsvp"
+>
+  <section class="az-section az-rsvp-section">
+    <div class="container az-page-width">
+      <div class="row">
+        <div class="col-12">
+          <header class="az-rsvp-header">
+            <h1 class="az-page-title">RSVP</h1>
+            <p>We can&apos;t wait to celebrate with you. Please respond by October 5, 2026.</p>
+          </header>
+
+          <form id="az-rsvp-form" class="az-rsvp-form" novalidate onsubmit="event.preventDefault()">
+            <div class="az-rsvp-body">
+              <div class="az-rsvp-identity row g-4 g-lg-5">
+                <div class="col-sm-6 col-lg-4">
+                  <label class="az-rsvp-label" for="firstName">First name</label>
+                  <input
+                    class="az-rsvp-input"
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    required
+                    autocomplete="given-name"
+                  />
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                  <label class="az-rsvp-label" for="lastName">Last name</label>
+                  <input
+                    class="az-rsvp-input"
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    required
+                    autocomplete="family-name"
+                  />
+                </div>
+                <div class="col-12 col-lg-4">
+                  <label class="az-rsvp-label" for="email">Email</label>
+                  <input
+                    class="az-rsvp-input"
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    autocomplete="email"
+                  />
+                </div>
+              </div>
+
+              <div class="az-rsvp-main-row row g-4 g-lg-5">
+                <div class="col-12 col-lg-4">
+                  <fieldset class="az-rsvp-field az-rsvp-field--question">
+                    <legend class="az-rsvp-legend">Will you be attending?</legend>
+                    <div class="az-rsvp-options">
+                      <label class="az-rsvp-option">
+                        <input class="az-rsvp-option-input" type="radio" name="attending" value="Yes, I will be there" required />
+                        <span class="az-rsvp-option-label">Yes, I will be there</span>
+                      </label>
+                      <label class="az-rsvp-option">
+                        <input class="az-rsvp-option-input" type="radio" name="attending" value="No, I can't make it" />
+                        <span class="az-rsvp-option-label">No, I can&apos;t make it</span>
+                      </label>
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div id="az-rsvp-decline" class="col-12 col-lg-8 az-rsvp-decline d-none">
+                  <div class="az-rsvp-field">
+                    <label class="az-rsvp-label" for="declineMessage">Optional message</label>
+                    <textarea
+                      class="az-rsvp-textarea"
+                      id="declineMessage"
+                      name="declineMessage"
+                      rows="3"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div id="az-rsvp-accept-dietary" class="col-12 col-lg-4 az-rsvp-accept-col d-none">
+                  <div class="az-rsvp-field az-rsvp-field--dietary">
+                    <label class="az-rsvp-label" for="dietary">Any food allergies or restrictions?</label>
+                    <input
+                      class="az-rsvp-input"
+                      type="text"
+                      id="dietary"
+                      name="dietary"
+                      autocomplete="off"
+                    />
+                  </div>
+                </div>
+
+                <div id="az-rsvp-accept-joining" class="col-12 col-lg-4 az-rsvp-accept-col d-none">
+                  <fieldset class="az-rsvp-field az-rsvp-field--question az-rsvp-field--joining">
+                    <legend class="az-rsvp-legend">Will anyone be joining you?</legend>
+                    <div class="az-rsvp-options az-rsvp-options--compact">
+                      <label class="az-rsvp-option">
+                        <input class="az-rsvp-option-input" type="radio" name="joining" value="Yes" />
+                        <span class="az-rsvp-option-label">Yes</span>
+                      </label>
+                      <label class="az-rsvp-option">
+                        <input class="az-rsvp-option-input" type="radio" name="joining" value="No" />
+                        <span class="az-rsvp-option-label">No</span>
+                      </label>
+                    </div>
+                  </fieldset>
+                  <div id="az-rsvp-guests-count" class="az-rsvp-field az-rsvp-field--guest-count d-none">
+                    <label class="az-rsvp-label" for="additionalGuests">Additional guests</label>
+                    <select class="az-rsvp-select" id="additionalGuests" name="additionalGuests">
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div id="az-rsvp-guest-fields"></div>
+
+              <div class="visually-hidden" aria-hidden="true">
+                <label for="website">Website</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <div id="az-rsvp-status" class="az-rsvp-status d-none" role="status"></div>
+
+              <div class="az-rsvp-actions">
+                <button type="submit" class="btn btn-primary">Submit RSVP</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script slot="scripts" src="/assets/js/rsvp-form.js" defer></script>
+</BaseLayout>
