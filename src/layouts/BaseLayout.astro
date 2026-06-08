@@ -5,6 +5,7 @@ import home from '../data/home.json';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import AzIcon from '../components/AzIcon.astro';
+import { getGoogleMapsApiKey } from '../lib/env';
 
 interface Props {
   title?: string;
@@ -27,7 +28,7 @@ const {
   mapsCallback = '',
 } = Astro.props;
 
-const mapsKey = import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY || '';
+const mapsKey = getGoogleMapsApiKey();
 const siteOrigin = site.siteUrl.replace(/\/$/, '');
 const pageUrl = `${siteOrigin}${Astro.url.pathname}`;
 const shareImageUrl = new URL(site.shareImage, `${siteOrigin}/`).href;
