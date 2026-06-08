@@ -1,13 +1,19 @@
 ---
-import site from '../data/site.json';
+import { getContent, getUi } from '../lib/content';
+import { localizePath, type Locale } from '../lib/i18n';
 import { brandNavDark, brandNavLight } from '../lib/photos';
+import LanguageSwitcher from './LanguageSwitcher.astro';
 
 interface Props {
   isHome?: boolean;
+  locale?: Locale;
 }
 
-const { isHome = false } = Astro.props;
+const { isHome = false, locale = 'en' } = Astro.props;
+const { site } = getContent(locale);
+const ui = getUi(locale);
 const currentPath = Astro.url.pathname;
+const homeHref = localizePath('/', locale);
 
 function isActive(href: string) {
   return currentPath === href || currentPath === href.replace(/\/$/, '');
@@ -15,6 +21,8 @@ function isActive(href: string) {
 
 const navLinks = site.nav.filter((item) => !item.href.includes('rsvp'));
 const rsvpItem = site.nav.find((item) => item.href.includes('rsvp'));
+const faqItem = navLinks[navLinks.length - 1];
+const navBeforeSwitcher = navLinks.slice(0, -1);
 ---
 
 <header>
@@ -28,7 +36,7 @@ const rsvpItem = site.nav.find((item) => item.href.includes('rsvp'));
     ]}
   >
     <div class="container-fluid">
-      <a class="navbar-brand" href="/" rel="home">
+      <a class="navbar-brand" href={homeHref} rel="home">
         <img
           class="az-brand-symbol az-brand-symbol--nav"
           src={isHome ? brandNavLight : brandNavDark}
@@ -55,13 +63,14 @@ const rsvpItem = site.nav.find((item) => item.href.includes('rsvp'));
             </a>
           )
         }
+        <LanguageSwitcher locale={locale} variant="inline" class="az-lang-switcher--mobile-header" />
         <button
           class="navbar-toggler az-mobile-nav__toggle"
           type="button"
           data-az-mobile-nav-toggle
           aria-controls="az-mobile-nav"
           aria-expanded="false"
-          aria-label="Open menu"
+          aria-label={ui.openMenu}
         >
           <span class="az-mobile-nav__toggle-icon" aria-hidden="true"></span>
         </button>
@@ -70,7 +79,7 @@ const rsvpItem = site.nav.find((item) => item.href.includes('rsvp'));
       <div id="navbar" class="collapse navbar-collapse d-none d-md-flex">
         <ul class="navbar-nav az-nav-menu ms-auto align-items-md-center gap-md-2">
           {
-            site.nav.map((item) => {
+            navBeforeSwitcher.map((item) => {
               const active = isActive(item.href);
               return (
                 <li class:list={['nav-item', active && 'is-active']}>
@@ -85,6 +94,33 @@ const rsvpItem = site.nav.find((item) => item.href.includes('rsvp'));
               );
             })
           }
+          {
+            faqItem && (
+              <li class:list={['nav-item', isActive(faqItem.href) && 'is-active']}>
+                <a
+                  href={faqItem.href}
+                  class:list={['nav-link', isActive(faqItem.href) && 'active']}
+                  aria-current={isActive(faqItem.href) ? 'page' : undefined}
+                >
+                  {faqItem.label}
+                </a>
+              </li>
+            )
+          }
+          <LanguageSwitcher locale={locale} />
+          {
+            rsvpItem && (
+              <li class:list={['nav-item', isActive(rsvpItem.href) && 'is-active']}>
+                <a
+                  href={rsvpItem.href}
+                  class:list={['nav-link', isActive(rsvpItem.href) && 'active']}
+                  aria-current={isActive(rsvpItem.href) ? 'page' : undefined}
+                >
+                  {rsvpItem.label}
+                </a>
+              </li>
+            )
+          }
         </ul>
       </div>
     </div>
@@ -96,8 +132,8 @@ const rsvpItem = site.nav.find((item) => item.href.includes('rsvp'));
     aria-hidden="true"
     inert
   >
-    <div class="az-mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Menu">
-      <nav class="az-mobile-nav__nav" aria-label="Main">
+    <div class="az-mobile-nav__panel" role="dialog" aria-modal="true" aria-label={ui.menuLabel}>
+      <nav class="az-mobile-nav__nav" aria-label={ui.mainNavLabel}>
         <ul class="az-mobile-nav__list">
           {
             navLinks.map((item) => {

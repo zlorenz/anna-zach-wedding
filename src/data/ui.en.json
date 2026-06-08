@@ -1,0 +1,67 @@
+{
+  "skipToContent": "Skip to main content",
+  "backToTop": "Back to top",
+  "openMenu": "Open menu",
+  "menuLabel": "Menu",
+  "mainNavLabel": "Main",
+  "metaDescription": "{name} — {date}, {location}. Travel details, weekend schedule, and RSVP.",
+  "faq": {
+    "expandAll": "Expand all",
+    "collapseAll": "Collapse all",
+    "answerImages": "Answer images"
+  },
+  "itinerary": {
+    "weddingDay": "Wedding Day",
+    "weekendSchedule": "Weekend Schedule",
+    "weddingDayEyebrow": "Wedding day",
+    "viewDetails": "View Details",
+    "imageBreakAria": "Itinerary image highlights"
+  },
+  "travel": {
+    "airportMapAria": "Airport location map",
+    "routeMapAria": "Driving route from airport to Nha Trang",
+    "imageBreakAria": "Travel image highlights"
+  },
+  "accommodation": {
+    "viewHotel": "View hotel",
+    "imageBreakAria": "Accommodation image highlights"
+  },
+  "thingsToDo": {
+    "pageTitle": "Things to Do",
+    "mapFilterAria": "Filter places on the map",
+    "mapAria": "Things to do around Nha Trang"
+  },
+  "rsvp": {
+    "pageTitle": "RSVP",
+    "intro": "We can't wait to celebrate with you. Please respond by October 5, 2026.",
+    "metaDescription": "RSVP for {name}'s wedding — December 5, 2026 in Nha Trang, Vietnam.",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "attendingLegend": "Will you be attending?",
+    "attendingYes": "Yes, I will be there",
+    "attendingNo": "No, I can't make it",
+    "declineMessage": "Optional message",
+    "dietary": "Any food allergies or restrictions?",
+    "joiningLegend": "Will anyone be joining you?",
+    "yes": "Yes",
+    "no": "No",
+    "additionalGuests": "Additional guests",
+    "submit": "Submit RSVP",
+    "guestTitle": "Guest {n}",
+    "guestName": "Name",
+    "guestAge": "Age",
+    "guestAgeSelect": "Select",
+    "guestAgeAdult": "Adult",
+    "guestAgeChild": "Child",
+    "guestAgeInfant": "Infant",
+    "guestDietary": "Food allergies or restrictions",
+    "validationFirstName": "Please enter your first name.",
+    "validationLastName": "Please enter your last name.",
+    "validationEmail": "Please enter your email.",
+    "validationAttending": "Please choose whether you will be attending.",
+    "success": "Thank you! Your RSVP has been received.",
+    "errorGeneric": "Something went wrong. Please try again.",
+    "errorSubmission": "Submission failed"
+  }
+}

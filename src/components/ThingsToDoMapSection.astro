@@ -1,8 +1,17 @@
 ---
-import { thingsToDoMapData } from '../lib/content';
+import { getContent, getUi } from '../lib/content';
+import type { Locale } from '../lib/i18n';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+const { thingsToDoMap } = getContent(locale);
+const ui = getUi(locale);
 
 const { title, intro, legendRestaurants, legendNightlife, legendSightseeing, legendEntertainment, filterToggleAll } =
-  thingsToDoMapData;
+  thingsToDoMap;
 
 const legendItems = [
   { key: 'restaurants', label: legendRestaurants },
@@ -32,7 +41,7 @@ const legendItems = [
         class="az-things-to-do-map__legend"
         data-az-things-to-do-filters
         role="group"
-        aria-label="Filter places on the map"
+        aria-label={ui.thingsToDo.mapFilterAria}
       >
         <button
           type="button"
@@ -63,7 +72,7 @@ const legendItems = [
         id="az-things-to-do-map-canvas"
         class="az-things-to-do-map__canvas az-things-to-do-map__canvas--calibrating"
         role="region"
-        aria-label="Things to do around Nha Trang"
+        aria-label={ui.thingsToDo.mapAria}
         aria-busy="true"
       />
     </div>

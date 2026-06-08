@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ThingsToDoMapSection from '../components/ThingsToDoMapSection.astro';
+import { getContent, getUi } from '../lib/content';
+import type { Locale } from '../lib/i18n';
+
+interface Props {
+  locale?: Locale;
+}
+
+const locale = Astro.props.locale ?? 'en';
+const { site, thingsToDo } = getContent(locale);
+const ui = getUi(locale);
+const mapConfig = thingsToDo.mapConfig;
+const mapsApi = Boolean(mapConfig?.places?.length);
+---
+
+<BaseLayout
+  title={`${ui.thingsToDo.pageTitle} · ${site.name}`}
+  bodyClass="page-things-to-do"
+  mapsApi={mapsApi}
+  mapsCallback="azThingsToDoMapInit"
+  locale={locale}
+>
+  <section class="az-section">
+    <div class="container az-page-width">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1 class="az-page-title">{ui.thingsToDo.pageTitle}</h1>
+          <div class="az-prose" set:html={thingsToDo.introHtml} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {mapsApi && <ThingsToDoMapSection locale={locale} />}
+
+  {
+    mapsApi && mapConfig && (
+      <script slot="scripts" define:vars={{ mapConfig }}>
+        window.azThingsToDoMap = mapConfig;
+      </script>
+    )
+  }
+  {mapsApi && <script slot="scripts" src="/assets/js/things-to-do-map.js" />}
+</BaseLayout>

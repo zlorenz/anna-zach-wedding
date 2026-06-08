@@ -1,0 +1,67 @@
+{
+  "skipToContent": "Перейти к основному содержанию",
+  "backToTop": "Наверх",
+  "openMenu": "Открыть меню",
+  "menuLabel": "Меню",
+  "mainNavLabel": "Основное",
+  "metaDescription": "{name} — {date}, {location}. Как добраться, программа выходных и подтверждение участия.",
+  "faq": {
+    "expandAll": "Развернуть все",
+    "collapseAll": "Свернуть все",
+    "answerImages": "Изображения к ответу"
+  },
+  "itinerary": {
+    "weddingDay": "День свадьбы",
+    "weekendSchedule": "Программа выходных",
+    "weddingDayEyebrow": "День свадьбы",
+    "viewDetails": "Подробнее",
+    "imageBreakAria": "Фотографии из программы"
+  },
+  "travel": {
+    "airportMapAria": "Карта расположения аэропорта",
+    "routeMapAria": "Маршрут на автомобиле от аэропорта до Нячанга",
+    "imageBreakAria": "Фотографии из раздела о поездке"
+  },
+  "accommodation": {
+    "viewHotel": "Открыть отель",
+    "imageBreakAria": "Фотографии из раздела о проживании"
+  },
+  "thingsToDo": {
+    "pageTitle": "Чем заняться",
+    "mapFilterAria": "Фильтр мест на карте",
+    "mapAria": "Места в Нячанге"
+  },
+  "rsvp": {
+    "pageTitle": "Подтвердите участие",
+    "intro": "Мы с нетерпением ждём праздника вместе с вами. Пожалуйста, ответьте до 5 октября 2026 года.",
+    "metaDescription": "Подтвердите участие в свадьбе {name} — 5 декабря 2026 года, Нячанг, Вьетнам.",
+    "firstName": "Имя",
+    "lastName": "Фамилия",
+    "email": "Эл. почта",
+    "attendingLegend": "Вы придёте?",
+    "attendingYes": "Да, буду",
+    "attendingNo": "Нет, не смогу",
+    "declineMessage": "Сообщение (необязательно)",
+    "dietary": "Аллергии или ограничения в питании?",
+    "joiningLegend": "Кто-то будет с вами?",
+    "yes": "Да",
+    "no": "Нет",
+    "additionalGuests": "Дополнительные гости",
+    "submit": "Отправить",
+    "guestTitle": "Гость {n}",
+    "guestName": "Имя",
+    "guestAge": "Возраст",
+    "guestAgeSelect": "Выберите",
+    "guestAgeAdult": "Взрослый",
+    "guestAgeChild": "Ребёнок",
+    "guestAgeInfant": "Младенец",
+    "guestDietary": "Аллергии или ограничения в питании",
+    "validationFirstName": "Пожалуйста, укажите имя.",
+    "validationLastName": "Пожалуйста, укажите фамилию.",
+    "validationEmail": "Пожалуйста, укажите эл. почту.",
+    "validationAttending": "Пожалуйста, укажите, придёте ли вы.",
+    "success": "Спасибо! Мы получили ваш ответ.",
+    "errorGeneric": "Что-то пошло не так. Попробуйте ещё раз.",
+    "errorSubmission": "Не удалось отправить"
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "mapUi": {
+    "fitZoom": 14,
+    "zoomLabelMin": 16
+  },
+  "i18n": {
+    "ariaMap": "Места в Нячанге",
+    "openInMaps": "Открыть в Google Maps"
+  },
+  "places": [
+    {
+      "id": "armenia",
+      "title": "Armenia",
+      "category": "restaurants",
+      "mapsUrl": "https://www.google.com/maps/place/Armenia+Nha+Trang/@12.2282743,109.1849788,15z/data=!4m10!3m9!1s0x3170676b619ea7f3:0x131223d881c6a472!8m2!3d12.2330304!4d109.1944048!16s%2Fg%2F11sbv96m02",
+      "lat": 12.2330304,
+      "lng": 109.1944048,
+      "blurb": "Армянская, грузинская и русская кухня — отличные хинкали и мясо."
+    },
+    {
+      "id": "sam-lor",
+      "title": "Sam Lor",
+      "category": "restaurants",
+      "mapsUrl": "https://www.google.com/maps/place/Sam+Lor+Thai+Restaurant+Nha+Trang/@12.2390507,109.1912056,18z/data=!4m10!3m9!1s0x3170674e11d120a5:0xdb34a6b586005797!8m2!3d12.2390478!4d109.1920757!16s%2Fg%2F11j0w944_z",
+      "lat": 12.2390478,
+      "lng": 109.1920757,
+      "blurb": "Лучший тайский ресторан — даже по сравнению с Таиландом."
+    },
+    {
+      "id": "la-cala",
+      "title": "La Cala",
+      "category": "restaurants",
+      "mapsUrl": "https://www.google.com/maps/place/La+Cala+-+Gusto+Italiano/@12.2390507,109.1912056,18z/data=!4m10!3m9!1s0x317067b6eb73a617:0x32e90b2e4797dc8a!8m2!3d12.2387325!4d109.1927062!16s%2Fg%2F11l_gv6xgr",
+      "lat": 12.2387325,
+      "lng": 109.1927062,
+      "blurb": "Итальянский ресторан от итальянцев."
+    },
+    {
+      "id": "livin",
+      "title": "Livin",
+      "category": "restaurants",
+      "mapsUrl": "https://www.google.com/maps/place/LIVIN+-+Nha+Trang/@12.2400522,109.1917288,17z/data=!4m6!3m5!1s0x3170677c2dd5eb51:0x9e9b8620219644fb!8m2!3d12.2390787!4d109.1908386!16s%2Fg%2F11b7hr8m6p",
+      "lat": 12.2390787,
+      "lng": 109.1908386,
+      "blurb": "Стейк-хаус."
+    },
+    {
+      "id": "blue-sea-burger",
+      "title": "Blue Sea Burger",
+      "category": "restaurants",
+      "mapsUrl": "https://www.google.com/maps/place/Blue+Sea+Burger/@12.2382,109.192192,17z/data=!4m6!3m5!1s0x317067007ce2bd09:0x7b286865f13e7b5f!8m2!3d12.2386969!4d109.1907263!16s%2Fg%2F11wjpk4cqy",
+      "lat": 12.2386969,
+      "lng": 109.1907263,
+      "blurb": "Бургеры.",
+      "note": "Выбор Анны — бургеры"
+    },
+    {
+      "id": "mortys-smashburgers",
+      "title": "Morty's Smashburgers",
+      "category": "restaurants",
+      "mapsUrl": "https://www.google.com/maps/place/Morty%27s+Smashburgers/@12.2432976,109.1904039,16z/data=!4m6!3m5!1s0x317067005495d655:0xf0ecdd346e6aaf6e!8m2!3d12.2445109!4d109.1944243!16s%2Fg%2F11yfn6zf0d",
+      "lat": 12.2445109,
+      "lng": 109.1944243,
+      "blurb": "Смаш-бургеры.",
+      "note": "Выбор Анны — бургеры"
+    },
+    {
+      "id": "forkn-lekker",
+      "title": "Fork'n Lekker",
+      "category": "restaurants",
+      "mapsUrl": "https://www.google.com/maps/place/Fork%E2%80%99n+Lekker+Garden+Cafe/@12.2186694,109.1913113,17z/data=!4m6!3m5!1s0x3170673897d7cdcf:0xeb3fed5ef2fdc087!8m2!3d12.2186694!4d109.1938862!16s%2Fg%2F11t1j6xzjs",
+      "lat": 12.2186694,
+      "lng": 109.1938862,
+      "blurb": "Кафе в саду — бургеры и не только.",
+      "note": "Выбор Анны — бургеры"
+    },
+    {
+      "id": "egoist",
+      "title": "Egoist",
+      "category": "restaurants",
+      "mapsUrl": "https://www.google.com/maps/place/Egoist+Mediterranean+Restaurant/@12.2422257,109.1931826,17z/data=!4m6!3m5!1s0x317067619b57c173:0x4a48696f8459e66c!8m2!3d12.2422257!4d109.1931826!16s%2Fg%2F11ks79bm5k",
+      "lat": 12.2422257,
+      "lng": 109.1931826,
+      "blurb": "Средиземноморская кухня — хорошо и на завтрак, и на ужин.",
+      "note": "Выбор Анны — завтрак"
+    },
+    {
+      "id": "voila",
+      "title": "Voilà",
+      "category": "restaurants",
+      "mapsUrl": "https://www.google.com/maps/place/Voil%C3%A0/@12.2364488,109.1923066,16z/data=!4m6!3m5!1s0x317067b762366429:0x7c02a3e9ca68b295!8m2!3d12.2365001!4d109.1937241!16s%2Fg%2F11v9kjvzhj",
+      "lat": 12.2365001,
+      "lng": 109.1937241,
+      "blurb": "Завтраки.",
+      "note": "Выбор Анны — завтрак"
+    },
+    {
+      "id": "atelier",
+      "title": "Atelier",
+      "category": "restaurants",
+      "mapsUrl": "https://www.google.com/maps/place/atelier/@12.2328119,109.1948617,17z/data=!4m6!3m5!1s0x317067b71174e515:0xc304424fac479249!8m2!3d12.2328119!4d109.1948617!16s%2Fg%2F11ty0xncxf",
+      "lat": 12.2328119,
+      "lng": 109.1948617,
+      "blurb": "Завтраки и кофе.",
+      "note": "Выбор Анны — завтрак"
+    },
+    {
+      "id": "artisan",
+      "title": "Artisan",
+      "category": "restaurants",
+      "mapsUrl": "https://www.google.com/maps/place/Artisan+Cafe+%26+Eatery/@12.2192934,109.2002904,17z/data=!4m6!3m5!1s0x3170673224967a1b:0x52041714e46f02d7!8m2!3d12.2194343!4d109.2004979!16s%2Fg%2F11svvbb3yr",
+      "lat": 12.2194343,
+      "lng": 109.2004979,
+      "blurb": "Кафе — завтраки.",
+      "note": "Выбор Анны — завтрак"
+    },
+    {
+      "id": "chekhov",
+      "title": "Chekhov",
+      "category": "restaurants",
+      "mapsUrl": "https://www.google.com/maps/place/CHEKHOV+Coffee%26food/@12.2401526,109.1927793,17z/data=!4m6!3m5!1s0x317067d3d28f6b3b:0xc03321e9ee607944!8m2!3d12.2401526!4d109.1927793!16s%2Fg%2F11yf4hhbhw",
+      "lat": 12.2401526,
+      "lng": 109.1927793,
+      "blurb": "Кофе и еда — завтраки.",
+      "note": "Выбор Анны — завтрак"
+    },
+    {
+      "id": "optimist",
+      "title": "Optimist",
+      "category": "restaurants",
+      "mapsUrl": "https://www.google.com/maps/place/OPTIMIST+Casual+Cafe/@12.2402439,109.1515793,13z/data=!4m6!3m5!1s0x317067401895b681:0xd932d577267df556!8m2!3d12.2412152!4d109.189858!16s%2Fg%2F11l5f0qwlt",
+      "lat": 12.2412152,
+      "lng": 109.189858,
+      "blurb": "Непринуждённое кафе — завтраки.",
+      "note": "Выбор Анны — завтрак"
+    },
+    {
+      "id": "alpaca",
+      "title": "Alpaca",
+      "category": "restaurants",
+      "mapsUrl": "https://www.google.com/maps/place/Alpaca+homestyle+cafe/@12.2411051,109.1932393,17z/data=!4m6!3m5!1s0x3170677b90990705:0x2b1370f651e3730c!8m2!3d12.2411051!4d109.1932393!16s%2Fg%2F11bw4h5v9b",
+      "lat": 12.2411051,
+      "lng": 109.1932393,
+      "blurb": "Домашнее кафе — завтраки.",
+      "note": "Выбор Анны — завтрак"
+    },
+    {
+      "id": "poseidon",
+      "title": "Poseidon",
+      "category": "restaurants",
+      "mapsUrl": "https://www.google.com/maps/place/Buffet+Poseidon+Vincom+Nha+Trang/@12.2424014,109.1748121,15z/data=!4m6!3m5!1s0x317067b8ba055151:0xd9ae1f2451dd0389!8m2!3d12.2424014!4d109.1938665!16s%2Fg%2F11wp_bw15d",
+      "lat": 12.2424014,
+      "lng": 109.1938665,
+      "blurb": "Морепродукты и BBQ-буфет — всё, что съедите, около $20.",
+      "note": "Выбор Анны — морепродукты и BBQ-буфет"
+    },
+    {
+      "id": "qooqoo",
+      "title": "QooQoo",
+      "category": "restaurants",
+      "mapsUrl": "https://www.google.com/maps/place/QooQoo+Premium+Buffet+Gold+Coast+Nha+Trang/@12.2409738,109.1775252,14z/data=!4m6!3m5!1s0x317067bd60a676cb:0x2c73febdfc8836b7!8m2!3d12.2481451!4d109.1948614!16s%2Fg%2F11ms6p2y2p",
+      "lat": 12.2481451,
+      "lng": 109.1948614,
+      "blurb": "Премиум-буфет морепродуктов и BBQ — около $20.",
+      "note": "Выбор Анны — морепродукты и BBQ-буфет"
+    },
+    {
+      "id": "time-house-bistro-bar",
+      "title": "Time House Bistro & Bar",
+      "category": "nightlife",
+      "mapsUrl": "https://www.google.com/maps/place/Time+House+Bistro+%26+Bar/@12.2386877,109.1875949,17z/data=!3m1!4b1!4m9!3m8!1s0x3170677da6400133:0xe688ebe39062e055!5m2!4m1!1i2!8m2!3d12.2386877!4d109.1901698!16s%2Fg%2F11c5t256fg",
+      "lat": 12.2386877,
+      "lng": 109.1901698,
+      "blurb": "Бистро и бар в центре города."
+    },
+    {
+      "id": "ponagar-temple",
+      "title": "Ponagar Temple",
+      "category": "sightseeing",
+      "mapsUrl": "https://www.google.com/maps/place/Po+Nagar+Temple/@12.2653665,109.1953678,17z/data=!4m10!3m9!1s0x3170678c61b8f251:0x115f6f97f1af1d7c!8m2!3d12.2653665!4d109.1953678!16s%2Fm%2F02x5pgr",
+      "lat": 12.2653665,
+      "lng": 109.1953678,
+      "blurb": "Древний храмовый комплекс чамов на холме к северу от города — одна из главных культурных достопримечательностей Нячанга."
+    },
+    {
+      "id": "hon-chong",
+      "title": "Hon Chong",
+      "category": "sightseeing",
+      "mapsUrl": "https://www.google.com/maps/place/Hon+Chong/@12.2552234,109.1776964,14z/data=!4m6!3m5!1s0x317067ebf764f3e1:0x669216540dfca111!8m2!3d12.27292!4d109.2064934!16s%2Fg%2F11b6nt3f42",
+      "lat": 12.27292,
+      "lng": 109.2064934,
+      "blurb": "Скальная природная достопримечательность у моря — короткая остановка с видом на побережье."
+    },
+    {
+      "id": "long-son-pagoda",
+      "title": "Long Son Pagoda",
+      "category": "sightseeing",
+      "mapsUrl": "https://www.google.com/maps/place/Long+Son+Pagoda/@12.2520056,109.176025,17z/data=!4m6!3m5!1s0x31705d793fdf59e9:0x1b4211d23501841e!8m2!3d12.2501803!4d109.1801753!16s%2Fm%2F03qhn_n",
+      "lat": 12.2501803,
+      "lng": 109.1801753,
+      "blurb": "Пагода на холме с большим Буддой и видом на Нячанг."
+    },
+    {
+      "id": "ba-ho-waterfalls",
+      "title": "Ba Ho Waterfalls",
+      "category": "sightseeing",
+      "mapsUrl": "https://www.google.com/maps/place/Su%E1%BB%91i+Ba+H%E1%BB%93+-+Ninh+H%C3%B2a/@12.3898878,109.1361221,18z/data=!4m6!3m5!1s0x317041f3f548cb4d:0xaa15e21d47085033!8m2!3d12.3898876!4d109.1378721!16s%2Fg%2F11h0vrbmtj",
+      "lat": 12.3898876,
+      "lng": 109.1378721,
+      "blurb": "Природные бассейны и короткий поход по лесу — около 45 минут от Нячанга."
+    },
+    {
+      "id": "mountain-church",
+      "title": "Mountain Church",
+      "category": "sightseeing",
+      "mapsUrl": "https://www.google.com/maps/place/Mountain+Church/@12.2467309,109.1881257,17z/data=!4m10!3m9!1s0x31705d7fe2ab4047:0xa47ce2285f98b086!8m2!3d12.2467309!4d109.1881257!16s%2Fg%2F11h4142z0b",
+      "lat": 12.2467309,
+      "lng": 109.1881257,
+      "blurb": "Главный католический собор города — самый крупный, хорошо виден из центра."
+    },
+    {
+      "id": "nha-trang-beach",
+      "title": "Nha Trang Beach (central)",
+      "category": "entertainment",
+      "mapsUrl": "https://www.google.com/maps/place/B%C3%A3i+bi%E1%BB%83n+Nha+Trang/@12.2353317,109.1962658,16z/data=!4m10!3m9!1s0x31706770f4958433:0xf09b18bfbf27bde7!8m2!3d12.2363391!4d109.1978532!16s%2Fg%2F1tpg_6nr",
+      "lat": 12.2363391,
+      "lng": 109.1978532,
+      "blurb": "Главный городской пляж — в центре. В это время года бывают волны, но для прогулки отлично."
+    },
+    {
+      "id": "hon-chong-beach",
+      "title": "Hon Chong Beach (north)",
+      "category": "entertainment",
+      "mapsUrl": "https://www.google.com/maps/place/B%C3%A3i+T%E1%BA%AFm+H%C3%B2n+Ch%E1%BB%93ng/@12.2783445,109.1995276,16z/data=!4m10!3m9!1s0x317067e85878a985:0x5add814ffedd147!8m2!3d12.2745826!4d109.2024342!16s%2Fg%2F11f7354wnw",
+      "lat": 12.2745826,
+      "lng": 109.2024342,
+      "blurb": "Второй главный пляж к северу от города — обычно спокойнее и лучше для купания."
+    },
+    {
+      "id": "vinwonders",
+      "title": "VinWonders",
+      "category": "entertainment",
+      "mapsUrl": "https://www.google.com/maps/place/VinWonders+Nha+Trang/@12.2170491,109.2382967,17z/data=!4m6!3m5!1s0x317067c7c4267451:0x826b650efe77e523!8m2!3d12.2170491!4d109.2408716!16s%2Fg%2F11h52s0zxz",
+      "lat": 12.2170491,
+      "lng": 109.2408716,
+      "blurb": "Парк развлечений на Хон Тре — вьетнамский аналог Диснейленда. Билеты онлайн или отель Vinpearl с доступом в парк."
+    },
+    {
+      "id": "i-resort",
+      "title": "I-Resort",
+      "category": "entertainment",
+      "mapsUrl": "https://www.google.com/maps/place/I-Resort+Swimming+Pool/@12.2725279,109.1754562,17z/data=!4m10!3m9!1s0x31705d00114b88a9:0x48aeea8b7121c0a5!8m2!3d12.2725279!4d109.1754562!16s%2Fg%2F11v_159l9d",
+      "lat": 12.2725279,
+      "lng": 109.1754562,
+      "blurb": "Минеральные и грязевые ванны, массаж и водные горки. Лучше в будни — в выходные многолюдно."
+    },
+    {
+      "id": "do-theater",
+      "title": "Do Theater",
+      "category": "entertainment",
+      "mapsUrl": "https://www.google.com/maps/place/%C4%90%E1%BA%A1i+l%C3%BD+V%C3%A9+Nh%C3%A0+h%C3%A1t+%C4%90%C3%B3/@12.2998667,109.2364493,17z/data=!4m6!3m5!1s0x317069d0cfc698a7:0x64ec62d6a45a65a3!8m2!3d12.3005801!4d109.2375732!16s%2Fg%2F11sgpnqsz3",
+      "lat": 12.3005801,
+      "lng": 109.2375732,
+      "blurb": "Известен кукольным шоу — интересный культурный вечер, если хочется чего-то кроме пляжа."
+    }
+  ]
+}

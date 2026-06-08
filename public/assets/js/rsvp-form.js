@@ -4,6 +4,11 @@
   const form = document.getElementById('az-rsvp-form');
   if (!form) return;
 
+  const i18n = window.azRsvpI18n || {};
+  const t = function (key, fallback) {
+    return i18n[key] || fallback;
+  };
+
   const declineBlock = document.getElementById('az-rsvp-decline');
   const acceptCols = form.querySelectorAll('.az-rsvp-accept-col');
   const guestsCountBlock = document.getElementById('az-rsvp-guests-count');
@@ -22,14 +27,16 @@
       const block = document.createElement('div');
       block.className = 'az-rsvp-guest';
       block.innerHTML =
-        '<p class="az-rsvp-guest-title">Guest ' +
-        i +
+        '<p class="az-rsvp-guest-title">' +
+        t('guestTitle', 'Guest {n}').replace('{n}', String(i)) +
         '</p>' +
         '<div class="row g-3 g-lg-4 az-rsvp-guest-fields-row">' +
         '<div class="col-12 col-lg-4">' +
         '<label class="az-rsvp-label" for="guest' +
         i +
-        'Name">Name</label>' +
+        'Name">' +
+        t('guestName', 'Name') +
+        '</label>' +
         '<input class="az-rsvp-input" type="text" id="guest' +
         i +
         'Name" name="guest' +
@@ -39,22 +46,34 @@
         '<div class="col-12 col-lg-4">' +
         '<label class="az-rsvp-label" for="guest' +
         i +
-        'Age">Age</label>' +
+        'Age">' +
+        t('guestAge', 'Age') +
+        '</label>' +
         '<select class="az-rsvp-select" id="guest' +
         i +
         'Age" name="guest' +
         i +
         'Age">' +
-        '<option value="">Select</option>' +
-        '<option value="Adult">Adult</option>' +
-        '<option value="Child">Child</option>' +
-        '<option value="Infant">Infant</option>' +
+        '<option value="">' +
+        t('guestAgeSelect', 'Select') +
+        '</option>' +
+        '<option value="Adult">' +
+        t('guestAgeAdult', 'Adult') +
+        '</option>' +
+        '<option value="Child">' +
+        t('guestAgeChild', 'Child') +
+        '</option>' +
+        '<option value="Infant">' +
+        t('guestAgeInfant', 'Infant') +
+        '</option>' +
         '</select>' +
         '</div>' +
         '<div class="col-12 col-lg-4">' +
         '<label class="az-rsvp-label" for="guest' +
         i +
-        'Dietary">Food allergies or restrictions</label>' +
+        'Dietary">' +
+        t('guestDietary', 'Food allergies or restrictions') +
+        '</label>' +
         '<input class="az-rsvp-input" type="text" id="guest' +
         i +
         'Dietary" name="guest' +
@@ -101,16 +120,16 @@
 
   function validateForm(fd) {
     if (!String(fd.get('firstName') || '').trim()) {
-      return 'Please enter your first name.';
+      return t('validationFirstName', 'Please enter your first name.');
     }
     if (!String(fd.get('lastName') || '').trim()) {
-      return 'Please enter your last name.';
+      return t('validationLastName', 'Please enter your last name.');
     }
     if (!String(fd.get('email') || '').trim()) {
-      return 'Please enter your email.';
+      return t('validationEmail', 'Please enter your email.');
     }
     if (!fd.get('attending')) {
-      return 'Please choose whether you will be attending.';
+      return t('validationAttending', 'Please choose whether you will be attending.');
     }
     return '';
   }
@@ -173,12 +192,12 @@
         body: JSON.stringify(payload),
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data.error || 'Submission failed');
-      showStatus('Thank you! Your RSVP has been received.', 'success');
+      if (!res.ok) throw new Error(data.error || t('errorSubmission', 'Submission failed'));
+      showStatus(t('success', 'Thank you! Your RSVP has been received.'), 'success');
       form.reset();
       updateAttendingUI();
     } catch (err) {
-      showStatus(err.message || 'Something went wrong. Please try again.', 'danger');
+      showStatus(err.message || t('errorGeneric', 'Something went wrong. Please try again.'), 'danger');
     } finally {
       if (btn) btn.disabled = false;
     }

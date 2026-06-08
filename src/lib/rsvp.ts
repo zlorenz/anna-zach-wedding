@@ -3,6 +3,7 @@
  * (Telegram + Google Sheets via Apps Script + guest confirmation email).
  */
 
+import { getEnv } from './env';
 import { sendRsvpConfirmationEmail } from './rsvp-email';
 
 export type RsvpPayload = {
@@ -20,14 +21,13 @@ export type RsvpPayload = {
   userAgent?: string;
 };
 
-function env(name: string): string {
-  return (import.meta.env[name] as string | undefined)?.trim() || '';
-}
-
 export async function sendTelegramMessage(text: string): Promise<void> {
-  const token = env('AZ_TELEGRAM_BOT_TOKEN');
-  const chatId = env('AZ_TELEGRAM_CHAT_ID');
-  if (!token || !chatId) return;
+  const token = getEnv('AZ_TELEGRAM_BOT_TOKEN');
+  const chatId = getEnv('AZ_TELEGRAM_CHAT_ID');
+  if (!token || !chatId) {
+    console.error('[AZ Telegram] AZ_TELEGRAM_BOT_TOKEN or AZ_TELEGRAM_CHAT_ID is not set.');
+    return;
+  }
 
   const url = `https://api.telegram.org/bot${token}/sendMessage`;
   const res = await fetch(url, {
@@ -45,8 +45,8 @@ export async function sendTelegramMessage(text: string): Promise<void> {
 }
 
 export async function appendRsvpToGoogleSheet(data: Record<string, string>): Promise<void> {
-  const webhook = env('AZ_SHEETS_WEBHOOK_URL');
-  const secret = env('AZ_SHEETS_SECRET');
+  const webhook = getEnv('AZ_SHEETS_WEBHOOK_URL');
+  const secret = getEnv('AZ_SHEETS_SECRET');
   if (!webhook || !secret) {
     console.error('[AZ Sheets] Webhook URL or secret not set.');
     return;

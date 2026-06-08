@@ -113,6 +113,79 @@ Text Domain: anna-zach-wedding-child
 }
 
 /* ================================
+   Russian (Cyrillic) typography
+   Scoped via html[lang="ru"] — English pages unchanged
+================================ */
+
+html[lang="ru"] {
+  /* Body / UI = Futura PT (Typekit hvt3dwm) */
+  --az-font-sans: "futura-pt", sans-serif;
+  --az-font-sans-bold: "futura-pt-bold", sans-serif;
+  --az-font-sans-narrow: "futura-pt", sans-serif;
+  /* Headings = Cormorant Garamond (Google Fonts fallback supplies Cyrillic if Typekit subset is Latin-only) */
+  --az-font-heading: "cormorant-garamond", "Cormorant Garamond", Georgia, serif;
+  --bs-body-font-family: var(--az-font-sans);
+  --bs-font-sans-serif: var(--az-font-sans);
+  --bs-headings-font-family: var(--az-font-heading);
+}
+
+/* Futura PT Light for body copy (English uses Freight Sans Light / 300) */
+html[lang="ru"] body {
+  font-weight: 300;
+}
+
+html[lang="ru"] b,
+html[lang="ru"] strong {
+  font-family: var(--az-font-sans-bold);
+  font-weight: 700;
+}
+
+/* Futura PT Bold — match English bold sans (inline links, labels; not UI buttons) */
+html[lang="ru"] :is(
+  .navbar-nav .nav-link.active,
+  .navbar-nav .is-active > .nav-link,
+  .az-itinerary-page__section--multi-day .az-itinerary-day__eyebrow,
+  .az-itinerary-event__external-link,
+  .az-travel-callout__title,
+  .az-travel__section--essentials .az-travel-callout__title,
+  .az-travel__section--essentials .az-travel-callout__label,
+  .az-rsvp-label,
+  #az-main .az-prose a:not(.az-travel__button):not(.az-travel__button--outline-light),
+  .az-faq__answer:not([hidden]) a
+) {
+  font-family: var(--az-font-sans-bold);
+  font-weight: 700;
+}
+
+/* Russian UI controls — match English pill/button weights */
+html[lang="ru"] :is(
+  .az-travel__button,
+  .az-travel__button--outline-light,
+  .az-faq__toggle-all,
+  .az-accommodation-pick-card__link,
+  .az-mobile-header-rsvp,
+  .az-nav-menu a.nav-link[href*="rsvp"]
+) {
+  font-family: var(--az-font-sans);
+  font-weight: 500;
+}
+
+html[lang="ru"] :is(.btn, a.btn, .btn-primary, a.btn-primary) {
+  font-family: var(--az-font-sans);
+  font-weight: 400;
+}
+
+html[lang="ru"] .az-home-quick-nav__link {
+  font-family: var(--az-font-sans);
+  font-weight: 400;
+}
+
+html[lang="ru"] .az-nav-menu .nav-link:not([href*="rsvp"]) {
+  font-size: 0.86rem;
+  letter-spacing: 0.1em;
+}
+
+/* ================================
    Global Typography
 ================================ */
 
@@ -385,6 +458,76 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 
 .az-nav-menu > li.is-active > a.nav-link[href*="rsvp"] {
   font-weight: 500;
+}
+
+/* Language switcher — circular flag between FAQ and RSVP */
+.az-lang-switcher {
+  list-style: none;
+}
+
+.az-lang-switcher__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 1.375rem;
+  height: 1.375rem;
+  min-width: 1.375rem;
+  min-height: 1.375rem;
+  max-width: 1.375rem;
+  max-height: 1.375rem;
+  padding: 0;
+  border: 1px solid rgb(44 36 32 / 0.2);
+  border-radius: 50%;
+  aspect-ratio: 1;
+  background: rgb(255 255 255 / 0.65);
+  line-height: 0;
+  overflow: hidden;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.az-lang-switcher__link:hover,
+.az-lang-switcher__link:focus-visible {
+  border-color: rgb(44 36 32 / 0.45);
+  box-shadow: 0 0 0 2px rgb(232 196 200 / 0.45);
+}
+
+.az-lang-switcher__flag {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.az-nav-menu .az-lang-switcher {
+  align-self: center;
+  margin-left: 0.35rem;
+  margin-right: 0.15rem;
+}
+
+@media (min-width: 768px) {
+  .az-nav-menu .az-lang-switcher {
+    position: relative;
+    top: 3px;
+  }
+}
+
+.az-mobile-header-actions .az-lang-switcher__link--inline {
+  flex-shrink: 0;
+  margin-right: 0.35rem;
+}
+
+#header.az-nav-over-dark .az-lang-switcher__link {
+  border-color: rgb(255 255 255 / 0.35);
+  background: rgb(0 0 0 / 0.2);
+}
+
+#header.az-nav-over-dark .az-lang-switcher__link:hover,
+#header.az-nav-over-dark .az-lang-switcher__link:focus-visible {
+  border-color: rgb(255 255 255 / 0.65);
+  box-shadow: 0 0 0 2px rgb(255 255 255 / 0.15);
 }
 
 /* Mobile drawer — hidden on desktop (aside stays in DOM for mobile JS) */
@@ -2995,6 +3138,73 @@ a.az-travel__button {
 
 .az-faq > .container > .az-faq__title {
   margin-bottom: 2.25rem;
+}
+
+/* Russian headings — after .az-page-title rules so we override English all-caps styling */
+html[lang="ru"] :is(
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6,
+  .az-page-title,
+  .az-accommodation-page-title,
+  .az-faq__title,
+  .az-itinerary-event__title,
+  .az-rsvp-legend,
+  .az-rsvp-guest-title,
+  .az-travel__title,
+  .az-travel-essentials__title,
+  .az-travel-airport__display-line,
+  .az-travel-airport__title-mobile
+) {
+  font-family: var(--az-font-heading);
+  font-synthesis: none;
+}
+
+html[lang="ru"] :is(
+  .az-page-title,
+  .az-accommodation-page-title,
+  .az-faq__title,
+  .az-travel-airport__title-mobile
+) {
+  text-transform: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+html[lang="ru"] :is(h1, h2, h3, h4, h5, h6, .az-itinerary-event__title) {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+html[lang="ru"] body,
+html[lang="ru"] .az-prose {
+  font-synthesis: none;
+}
+
+/* Russian paragraph / prose copy — light weight (overrides component font-weight: 400) */
+html[lang="ru"] #az-main :is(
+  p,
+  li,
+  .az-prose,
+  .az-itinerary-event__description,
+  .az-itinerary-event__location,
+  .az-home-welcome__copy,
+  .az-accommodation-intro__copy,
+  .az-accommodation-note__body,
+  .az-accommodation-featured__tagline,
+  .az-accommodation-featured__reasons,
+  .az-accommodation-pick-card .small,
+  .az-faq__answer:not([hidden]),
+  .az-rsvp-header p,
+  .az-rsvp-option-label,
+  .az-things-to-do-map__intro,
+  .az-accommodation-map__intro,
+  .az-travel-airport__lead,
+  .az-travel-transfer__body,
+  .az-travel-essentials__copy,
+  .az-itinerary-page__wedding-date,
+  .az-itinerary-day__description
+) {
+  font-weight: 300;
 }
 
 .az-accommodation-intro__copy {

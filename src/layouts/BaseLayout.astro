@@ -1,11 +1,11 @@
 ---
 import '../styles/style.css';
-import site from '../data/site.json';
-import home from '../data/home.json';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import AzIcon from '../components/AzIcon.astro';
+import { getContent, getUi } from '../lib/content';
 import { getGoogleMapsApiKey } from '../lib/env';
+import { localeLang, type Locale } from '../lib/i18n';
 
 interface Props {
   title?: string;
@@ -17,11 +17,19 @@ interface Props {
   mapsApi?: boolean;
   /** Global callback defined by page map script, e.g. azTravelMapInit */
   mapsCallback?: string;
+  locale?: Locale;
 }
+
+const locale = Astro.props.locale ?? 'en';
+const { site, home } = getContent(locale);
+const ui = getUi(locale);
 
 const {
   title = site.name,
-  description = `${site.name} — ${home.eventDate}, ${home.eventLocation}. Travel details, weekend schedule, and RSVP.`,
+  description = ui.metaDescription
+    .replace('{name}', site.name)
+    .replace('{date}', home.eventDate)
+    .replace('{location}', home.eventLocation),
   bodyClass = '',
   isHome = false,
   mapsApi = false,
@@ -32,10 +40,11 @@ const mapsKey = getGoogleMapsApiKey();
 const siteOrigin = site.siteUrl.replace(/\/$/, '');
 const pageUrl = `${siteOrigin}${Astro.url.pathname}`;
 const shareImageUrl = new URL(site.shareImage, `${siteOrigin}/`).href;
+const htmlLang = localeLang(locale);
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={htmlLang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -55,6 +64,18 @@ const shareImageUrl = new URL(site.shareImage, `${siteOrigin}/`).href;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={shareImageUrl} />
     <link rel="stylesheet" href="https://use.typekit.net/hvt3dwm.css" />
+    {
+      locale === 'ru' && (
+        <>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+            rel="stylesheet"
+          />
+        </>
+      )
+    }
     <link rel="stylesheet" href="/assets/fonts/remsen-script/remsen-script.css" />
     <link
       rel="stylesheet"
@@ -64,19 +85,19 @@ const shareImageUrl = new URL(site.shareImage, `${siteOrigin}/`).href;
     />
   </head>
   <body class:list={[bodyClass, isHome && 'home', !isHome && 'az-inner-page']}>
-    <a href="#az-main" class="visually-hidden-focusable">Skip to main content</a>
+    <a href="#az-main" class="visually-hidden-focusable">{ui.skipToContent}</a>
     <div id="az-site">
-      <Header isHome={isHome} />
+      <Header isHome={isHome} locale={locale} />
       <main id="az-main">
         <slot />
       </main>
-      <Footer />
+      <Footer locale={locale} />
     </div>
     <button
       type="button"
       class="az-back-to-top"
       data-az-back-to-top
-      aria-label="Back to top"
+      aria-label={ui.backToTop}
       aria-hidden="true"
       tabindex="-1"
     >

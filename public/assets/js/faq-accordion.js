@@ -73,8 +73,10 @@
       return;
     }
 
+    var expandLabel = toggleAll.getAttribute('data-expand-label') || 'Expand all';
+    var collapseLabel = toggleAll.getAttribute('data-collapse-label') || 'Collapse all';
     var allOpen = allExpanded();
-    toggleAll.textContent = allOpen ? 'Collapse all' : 'Expand all';
+    toggleAll.textContent = allOpen ? collapseLabel : expandLabel;
     toggleAll.setAttribute('aria-expanded', allOpen ? 'true' : 'false');
   }
 

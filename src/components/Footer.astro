@@ -1,12 +1,20 @@
 ---
-import site from '../data/site.json';
-import home from '../data/home.json';
+import { getContent } from '../lib/content';
+import { localizePath, type Locale } from '../lib/i18n';
 import { brandNavDark, brandNavLight } from '../lib/photos';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+const { site, home } = getContent(locale);
+const homeHref = localizePath('/', locale);
 ---
 
 <footer id="footer" class="az-footer">
   <div class="az-footer__inner">
-    <a class="az-footer__brand" href="/" rel="home">
+    <a class="az-footer__brand" href={homeHref} rel="home">
       <img
         class="az-footer__logo az-footer__logo--on-light"
         src={brandNavDark}

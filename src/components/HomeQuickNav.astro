@@ -1,12 +1,20 @@
 ---
-import { siteData } from '../lib/content';
+import { getContent } from '../lib/content';
+import type { Locale } from '../lib/i18n';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+const { site } = getContent(locale);
 ---
 
 <nav class="az-section az-home-quick-nav" aria-label="Site sections">
   <div class="container az-page-width">
     <ul class="az-home-quick-nav__list">
       {
-        siteData.nav.map((item) => (
+        site.nav.map((item) => (
           <li class="az-home-quick-nav__item">
             <a class="az-home-quick-nav__link" href={item.href}>
               {item.label}

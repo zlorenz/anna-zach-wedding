@@ -1,5 +1,13 @@
 ---
-import { accommodationMapData } from '../lib/content';
+import { getContent } from '../lib/content';
+import type { Locale } from '../lib/i18n';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+const { accommodationMap } = getContent(locale);
 
 const {
   title,
@@ -9,7 +17,7 @@ const {
   legendTerminal,
   legendDriveRoute,
   legendCrossingRoute,
-} = accommodationMapData;
+} = accommodationMap;
 ---
 
 <section

@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeQuickNav from '../components/HomeQuickNav.astro';
+import { getContent, getUi } from '../lib/content';
+import { getHeroBackgroundUrls, brandHeroWordmark } from '../lib/photos';
+import type { Locale } from '../lib/i18n';
+
+interface Props {
+  locale?: Locale;
+}
+
+const locale = Astro.props.locale ?? 'en';
+const { site, home, homeWelcome } = getContent(locale);
+const ui = getUi(locale);
+const heroBackground = getHeroBackgroundUrls();
+
+const description = ui.metaDescription
+  .replace('{name}', site.name)
+  .replace('{date}', home.eventDate)
+  .replace('{location}', home.eventLocation);
+---
+
+<BaseLayout title={site.name} description={description} isHome locale={locale}>
+  <section class="az-hero text-white">
+    <div
+      class="az-hero-bg az-hero-bg--desktop"
+      style={`background-image: url('${heroBackground.desktop}');`}
+      aria-hidden="true"
+    ></div>
+    <div
+      class="az-hero-bg az-hero-bg--mobile"
+      style={`background-image: url('${heroBackground.mobile}');`}
+      aria-hidden="true"
+    ></div>
+    <div class="az-hero-overlay"></div>
+    <div class="container az-hero__container">
+      <div class="row">
+        <div class="col-lg-8 az-hero-content">
+          <h1 class="az-hero-title mb-0">
+            <img
+              class="az-brand-symbol az-brand-symbol--hero"
+              src={brandHeroWordmark}
+              alt={site.name}
+            />
+          </h1>
+          <div class="az-hero-meta mb-4">
+            <p class="az-hero-meta-item az-hero-meta-item--date mb-0 d-none d-md-block">{home.eventDate}</p>
+            <p class="az-hero-meta-item az-hero-meta-item--date mb-0 d-md-none">{home.eventDateShort}</p>
+            <p class="az-hero-meta-item az-hero-meta-item--location mb-0 d-none d-md-block">{home.eventLocation}</p>
+            <p class="az-hero-meta-item az-hero-meta-item--location mb-0 d-md-none">{home.eventLocationShort}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="az-section az-home-welcome">
+    <div class="container az-page-width">
+      <div class="row">
+        <div class="col-lg-11">
+          <div class="az-home-welcome__copy az-prose" data-az-welcome-reveal>
+            {homeWelcome.paragraphs.map((paragraph) => (
+              <p data-welcome-text={paragraph}>{paragraph}</p>
+            ))}
+            {homeWelcome.signature && (
+              <p class="az-home-welcome__signature">
+                <span class="az-signature-clip" data-az-signature-reveal>
+                  <span class="az-signature-reveal">{homeWelcome.signature}</span>
+                </span>
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <HomeQuickNav locale={locale} />
+  <script slot="scripts" src="/assets/js/home-welcome-reveal.js" defer></script>
+  <script slot="scripts" src="/assets/js/home-signature-reveal.js" defer></script>
+</BaseLayout>

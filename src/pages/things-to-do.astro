@@ -1,42 +1,7 @@
 ---
 export const prerender = false;
 
-import BaseLayout from '../layouts/BaseLayout.astro';
-import ThingsToDoMapSection from '../components/ThingsToDoMapSection.astro';
-import { thingsToDoData, siteData } from '../lib/content';
-
-const mapConfig = thingsToDoData.mapConfig;
-const mapsApi = Boolean(mapConfig?.places?.length);
+import ThingsToDoPage from '../templates/ThingsToDoPage.astro';
 ---
 
-<BaseLayout
-  title={`Things to Do · ${siteData.name}`}
-  bodyClass="page-things-to-do"
-  mapsApi={mapsApi}
-  mapsCallback="azThingsToDoMapInit"
->
-  <section class="az-section">
-    <div class="container az-page-width">
-      <div class="row">
-        <div class="col-lg-8">
-          <h1 class="az-page-title">Things to Do</h1>
-          <div
-            class="az-prose"
-            set:html={thingsToDoData.introHtml}
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  {mapsApi && <ThingsToDoMapSection />}
-
-  {
-    mapsApi && mapConfig && (
-      <script slot="scripts" define:vars={{ mapConfig }}>
-        window.azThingsToDoMap = mapConfig;
-      </script>
-    )
-  }
-  {mapsApi && <script slot="scripts" src="/assets/js/things-to-do-map.js" />}
-</BaseLayout>
+<ThingsToDoPage locale="en" />

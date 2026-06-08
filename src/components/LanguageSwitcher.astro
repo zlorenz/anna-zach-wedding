@@ -1,0 +1,39 @@
+---
+import type { Locale } from '../lib/i18n';
+import { switchLocalePath, switcherAriaLabel, switcherFlagSrc } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+  class?: string;
+  variant?: 'nav' | 'inline';
+}
+
+const { locale, class: className, variant = 'nav' } = Astro.props;
+const switchHref = switchLocalePath(Astro.url.pathname);
+const flagSrc = switcherFlagSrc(locale);
+const ariaLabel = switcherAriaLabel(locale);
+---
+
+{
+  variant === 'inline' ? (
+    <a
+      href={switchHref}
+      class:list={['az-lang-switcher__link', 'az-lang-switcher__link--inline', className]}
+      aria-label={ariaLabel}
+      title={ariaLabel}
+    >
+      <img class="az-lang-switcher__flag" src={flagSrc} alt="" width="20" height="20" />
+    </a>
+  ) : (
+    <li class:list={['nav-item', 'az-lang-switcher', className]}>
+      <a
+        href={switchHref}
+        class="az-lang-switcher__link"
+        aria-label={ariaLabel}
+        title={ariaLabel}
+      >
+        <img class="az-lang-switcher__flag" src={flagSrc} alt="" width="16" height="16" />
+      </a>
+    </li>
+  )
+}

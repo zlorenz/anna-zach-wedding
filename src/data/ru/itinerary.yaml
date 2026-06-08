@@ -1,0 +1,88 @@
+introHtml: ""
+
+weddingDay:
+  - time: "15:30"
+    title: Прибытие гостей
+    descriptionHtml: "<p>Гости прибывают и знакомятся с площадкой церемонии.</p>"
+    location: "Nha Trang Marriott, остров Хон Тре"
+    featured: false
+    typeClass: other
+
+  - time: "16:00 – 16:45"
+    title: Церемония
+    descriptionHtml: "<p>Свадебная церемония с видом на океан.</p>"
+    location: "Marriott — пляж и лужайка"
+    featured: true
+    typeClass: ceremony
+
+  - time: "17:00 – 18:00"
+    title: Коктейль-час
+    descriptionHtml: "<p>Напитки и лёгкие закуски, пока мы делаем фотографии.</p>"
+    location: "Marriott — пляж и лужайка"
+    featured: false
+    typeClass: cocktails
+
+  - time: "18:00 – 21:30"
+    title: Банкет, тосты и праздник
+    descriptionHtml: "<p>Ужин, тосты и празднование.</p>"
+    location: "Marriott — пляж и лужайка"
+    featured: true
+    typeClass: reception
+
+  - time: "21:30"
+    title: After-party
+    descriptionHtml: "<p>Поздний вечер с музыкой и напитками в баре в городе на материке.</p>"
+    location: "Место будет объявлено"
+    featured: false
+    typeClass: party
+
+multiDay:
+  - label: Репетиционный ужин
+    date: "Dec 4, 2026"
+    descriptionHtml: ""
+    highlight: false
+    events:
+      - time: "18:30 – 21:30"
+        title: Репетиционный ужин
+        descriptionHtml: "<p>Место будет объявлено. По приглашению — для близких друзей, семьи и свадебной вечеринки.</p>"
+        externalUrl: ""
+        externalLabel: ""
+        typeClass: other
+
+  - label: After-party
+    date: "Dec 5, 2026"
+    descriptionHtml: ""
+    highlight: true
+    events:
+      - time: "16:00 – 17:00"
+        title: Свадебная церемония
+        descriptionHtml: ""
+        externalUrl: ""
+        externalLabel: ""
+        typeClass: ceremony
+
+      - time: "18:00 – 21:30"
+        title: Банкет
+        descriptionHtml: ""
+        externalUrl: ""
+        externalLabel: ""
+        typeClass: reception
+
+      - time: "21:30"
+        title: After-party
+        descriptionHtml: ""
+        externalUrl: ""
+        externalLabel: ""
+        typeClass: party
+
+  - label: Встреча после свадьбы
+    date: "Dec 6, 2026"
+    descriptionHtml: ""
+    highlight: false
+    events:
+      - time: "12:00 – 16:00"
+        title: Встреча после свадьбы
+        descriptionHtml: "<p>Открытый бранч с мимозами и закусками — заходите когда удобно и оставайтесь сколько хотите. Без расписания, просто ещё немного времени вместе.</p>"
+        externalUrl: ""
+        externalLabel: ""
+        typeClass: other

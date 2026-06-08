@@ -1,0 +1,19 @@
+{
+  "name": "Anna & Zach",
+  "siteUrl": "https://annaandzach.love",
+  "shareImage": "/assets/photos/engagement/20260404-NS-AZ-5222.jpg",
+  "favicon": "/assets/brand/initials-symbol-dark.png",
+  "themeColor": "#F0EBE3",
+  "copyrightYear": 2026,
+  "nav": [
+    { "href": "/itinerary/", "label": "Программа" },
+    { "href": "/travel/", "label": "Дорога" },
+    { "href": "/accomodation/", "label": "Жильё" },
+    { "href": "/things-to-do/", "label": "Досуг" },
+    { "href": "/faq/", "label": "FAQ" },
+    { "href": "/rsvp/", "label": "Ответить" }
+  ],
+  "brandNavDark": "/assets/brand/initials-symbol-dark.png",
+  "brandNavLight": "/assets/brand/initials-symbol-light.png",
+  "brandHeroWordmark": "/assets/brand/anna-zach-symbol-light.png"
+}

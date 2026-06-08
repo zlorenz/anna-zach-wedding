@@ -2,6 +2,8 @@
  * RSVP confirmation emails via Resend (https://resend.com) — fetch only, no SDK.
  */
 
+import { getEnv } from './env';
+
 export type RsvpEmailContext = {
   firstName: string;
   name: string;
@@ -15,12 +17,8 @@ export type RsvpEmailContext = {
 const WEDDING_DATE = 'Saturday, December 5, 2026';
 const WEDDING_PLACE = 'Nha Trang, Vietnam';
 
-function env(name: string): string {
-  return (import.meta.env[name] as string | undefined)?.trim() || '';
-}
-
 function siteUrl(): string {
-  return env('AZ_SITE_URL').replace(/\/$/, '') || 'https://annaandzach.love';
+  return getEnv('AZ_SITE_URL').replace(/\/$/, '') || 'https://annaandzach.love';
 }
 
 function escapeHtml(value: string): string {
@@ -143,9 +141,10 @@ function buildDeclinedBodies(ctx: RsvpEmailContext): { subject: string; text: st
 }
 
 export async function sendRsvpConfirmationEmail(ctx: RsvpEmailContext): Promise<void> {
-  const apiKey = env('AZ_RESEND_API_KEY');
-  const from = env('AZ_RSVP_EMAIL_FROM');
+  const apiKey = getEnv('AZ_RESEND_API_KEY');
+  const from = getEnv('AZ_RSVP_EMAIL_FROM');
   if (!apiKey || !from) {
+    console.error('[AZ Email] AZ_RESEND_API_KEY or AZ_RSVP_EMAIL_FROM is not set.');
     return;
   }
 
@@ -156,7 +155,7 @@ export async function sendRsvpConfirmationEmail(ctx: RsvpEmailContext): Promise<
   }
 
   const { subject, text, html } = ctx.isYes ? buildAcceptedBodies(ctx) : buildDeclinedBodies(ctx);
-  const replyTo = env('AZ_RSVP_REPLY_TO');
+  const replyTo = getEnv('AZ_RSVP_REPLY_TO');
 
   const body: Record<string, unknown> = {
     from,
