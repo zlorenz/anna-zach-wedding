@@ -934,8 +934,9 @@ body.home #az-main {
 
 body.home #az-main > .az-hero:first-child {
   margin-top: 0;
+  /* svh = small viewport — stable when mobile browsers hide/show the URL bar (dvh grows on scroll) */
   min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
 }
@@ -3044,6 +3045,11 @@ a.az-travel__button {
 @media (max-width: 767.98px) {
   .az-brand-symbol--hero {
     width: min(86%, 548px);
+  }
+
+  body.home #az-main > .az-hero:first-child {
+    height: 100svh;
+    max-height: 100svh;
   }
 
   body.home #az-main > .az-hero:first-child .az-hero__container {
