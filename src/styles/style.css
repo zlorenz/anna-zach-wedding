@@ -2382,6 +2382,11 @@ a.az-travel__button {
   margin-bottom: 0;
 }
 
+html[lang="ru"] .az-travel__section--airport .az-travel-airport__lead {
+  font-size: var(--az-body-copy-size, 1.2rem);
+  line-height: var(--az-body-copy-line-height, 1.55);
+}
+
 .az-travel__section--airport .az-travel-airport__map-frame {
   position: relative;
   border-radius: var(--az-radius-card);
