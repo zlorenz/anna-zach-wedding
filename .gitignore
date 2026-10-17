@@ -24,3 +24,7 @@ tmp/
 recipients.csv
 recipients2.csv
 sent_log.csv
+
+# Guest addresses and per-campaign send history
+private/guest-mail/*
+!private/guest-mail/.gitkeep

@@ -60,8 +60,11 @@ src/layouts/       BaseLayout.astro
 src/pages/         routes (note: /accomodation/ spelling matches WP slug)
 src/lib/           content helpers + RSVP server logic
 src/styles/        theme CSS
-scripts/           export-content.py
+scripts/           export-content.py, guest-mail campaigns
+private/guest-mail/  guest list and send log (gitignored)
 ```
+
+Guest notes live in `scripts/guest-mail`. Each send is a campaign folder of EN/RU HTML and text templates. Addresses and who has already been sent each campaign stay in `private/guest-mail/`, which git does not track. A follow-up is a copy of the previous campaign folder with new copy, sent with `--campaign=<name>`.
 
 ## Design
 
