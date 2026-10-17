@@ -21,3 +21,6 @@ Thumbs.db
 
 # Local reminder-email kit (guest addresses) and previews
 tmp/
+recipients.csv
+recipients2.csv
+sent_log.csv

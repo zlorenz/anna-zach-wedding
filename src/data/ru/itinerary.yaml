@@ -31,7 +31,7 @@ weddingDay:
 
   - time: "22:00"
     title: Афтерпати
-    descriptionHtml: "<p>Поздний вечер с музыкой и напитками в баре в городе на материке.</p>"
+    descriptionHtml: "<p>Поздний вечер с музыкой и напитками в баре в городе на материке. Только для взрослых.</p>"
     location: "Место будет объявлено"
     featured: false
     typeClass: party
@@ -70,7 +70,7 @@ multiDay:
 
       - time: "22:00"
         title: Афтерпати
-        descriptionHtml: ""
+        descriptionHtml: "<p>Бар в городе, на материке. Только для взрослых. Место будет объявлено.</p>"
         externalUrl: ""
         externalLabel: ""
         typeClass: party

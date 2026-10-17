@@ -35,7 +35,7 @@ weddingDay:
 
   - time: "10:00 pm"
     title: After Party
-    descriptionHtml: "<p>Late-night celebration with music and drinks at a bar in the city on the mainland.</p>"
+    descriptionHtml: "<p>Late-night celebration with music and drinks at a bar in the city on the mainland. Adults only.</p>"
     location: "Location to be announced"
     featured: false
     typeClass: party
@@ -75,7 +75,7 @@ multiDay:
 
       - time: "10:00 pm"
         title: After Party
-        descriptionHtml: ""
+        descriptionHtml: "<p>A bar in the city on the mainland. Adults only. Location to be announced.</p>"
         externalUrl: ""
         externalLabel: ""
         typeClass: party
