@@ -22,14 +22,14 @@ weddingDay:
     featured: false
     typeClass: cocktails
 
-  - time: "18:00 – 21:30"
+  - time: "18:00 – 22:00"
     title: Банкет, тосты и праздник
     descriptionHtml: "<p>Ужин, тосты и празднование.</p>"
     location: "Marriott, пляж и лужайка"
     featured: true
     typeClass: reception
 
-  - time: "21:30"
+  - time: "22:00"
     title: Афтерпати
     descriptionHtml: "<p>Поздний вечер с музыкой и напитками в баре в городе на материке.</p>"
     location: "Место будет объявлено"
@@ -61,14 +61,14 @@ multiDay:
         externalLabel: ""
         typeClass: ceremony
 
-      - time: "18:00 – 21:30"
+      - time: "18:00 – 22:00"
         title: Банкет
         descriptionHtml: ""
         externalUrl: ""
         externalLabel: ""
         typeClass: reception
 
-      - time: "21:30"
+      - time: "22:00"
         title: Афтерпати
         descriptionHtml: ""
         externalUrl: ""

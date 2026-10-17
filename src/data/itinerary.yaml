@@ -26,14 +26,14 @@ weddingDay:
     featured: false
     typeClass: cocktails
 
-  - time: "6:00 pm - 9:30 pm"
+  - time: "6:00 pm - 10:00 pm"
     title: Reception Dinner & Speeches
     descriptionHtml: "<p>Dinner, speeches, and celebration.</p>"
     location: "Marriott Beach & Lawn Area"
     featured: true
     typeClass: reception
 
-  - time: "9:30 pm"
+  - time: "10:00 pm"
     title: After Party
     descriptionHtml: "<p>Late-night celebration with music and drinks at a bar in the city on the mainland.</p>"
     location: "Location to be announced"
@@ -66,14 +66,14 @@ multiDay:
         externalLabel: ""
         typeClass: ceremony
 
-      - time: "6:00 pm - 9:30 pm"
+      - time: "6:00 pm - 10:00 pm"
         title: Reception Dinner
         descriptionHtml: ""
         externalUrl: ""
         externalLabel: ""
         typeClass: reception
 
-      - time: "9:30 pm"
+      - time: "10:00 pm"
         title: After Party
         descriptionHtml: ""
         externalUrl: ""
