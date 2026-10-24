@@ -49,9 +49,9 @@ multiDay:
     events:
       - time: "6:30 pm - 9:30 pm"
         title: Rehearsal Dinner
-        descriptionHtml: "<p>Location to be announced. By invitation only for close friends, family, and the wedding party.</p>"
-        externalUrl: ""
-        externalLabel: ""
+        descriptionHtml: "<p>Grillin's & Chillin's, a Spanish restaurant on the mainland. By invitation only for members of the wedding party.</p><p>Behind building OC3 at Mường Thanh Viễn Triều, 03–05 Phạm Văn Đồng, Nha Trang.</p>"
+        externalUrl: "https://maps.app.goo.gl/vXTLJFhmEAUcM2sR6"
+        externalLabel: "Get directions"
         typeClass: other
 
   - label: After Party

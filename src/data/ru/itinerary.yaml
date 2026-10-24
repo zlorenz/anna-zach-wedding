@@ -44,9 +44,9 @@ multiDay:
     events:
       - time: "18:30 – 21:30"
         title: Репетиционный ужин
-        descriptionHtml: "<p>Место будет объявлено. По приглашению: для близких друзей, семьи и свадебного кортежа.</p>"
-        externalUrl: ""
-        externalLabel: ""
+        descriptionHtml: "<p>Grillin's & Chillin's — испанский ресторан на материке. По приглашению: только для участников свадебного кортежа.</p><p>За зданием OC3, Mường Thanh Viễn Triều, 03–05 Phạm Văn Đồng, Нячанг.</p>"
+        externalUrl: "https://maps.app.goo.gl/vXTLJFhmEAUcM2sR6"
+        externalLabel: "Как добраться"
         typeClass: other
 
   - label: День свадьбы
