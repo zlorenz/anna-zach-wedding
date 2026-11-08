@@ -212,6 +212,7 @@ export type ItineraryMultiDayEvent = {
   time: string;
   title: string;
   descriptionHtml: string;
+  location?: string;
   externalUrl: string;
   externalLabel: string;
   typeClass: string;

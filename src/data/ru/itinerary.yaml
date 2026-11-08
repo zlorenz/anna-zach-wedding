@@ -31,24 +31,12 @@ weddingDay:
 
   - time: "22:00"
     title: Афтерпати
-    descriptionHtml: "<p>Поздний вечер с музыкой и напитками в баре в городе на материке. Только для взрослых.</p>"
-    location: "Место будет объявлено"
+    descriptionHtml: "<p>Сразу после банкета собираемся в Time House на напитки, а дальше немного бар-хоппинга по пешим местам на материке. Только для взрослых.</p>"
+    location: "Time House Bistro & Bar, 16a Đ. Ngô Thời Nhiệm"
     featured: false
     typeClass: party
 
 multiDay:
-  - label: Репетиционный ужин
-    date: "Dec 4, 2026"
-    descriptionHtml: ""
-    highlight: false
-    events:
-      - time: "18:30 – 21:30"
-        title: Репетиционный ужин
-        descriptionHtml: "<p>Grillin's & Chillin's — испанский ресторан на материке. По приглашению: только для участников свадебного кортежа.</p><p>За зданием OC3, Mường Thanh Viễn Triều, 03–05 Phạm Văn Đồng, Нячанг.</p>"
-        externalUrl: "https://maps.app.goo.gl/vXTLJFhmEAUcM2sR6"
-        externalLabel: "Как добраться"
-        typeClass: other
-
   - label: День свадьбы
     date: "Dec 5, 2026"
     descriptionHtml: ""
@@ -57,6 +45,7 @@ multiDay:
       - time: "16:00 – 16:45"
         title: Свадебная церемония
         descriptionHtml: ""
+        location: "Nha Trang Marriott Resort & Spa, остров Хон Тре"
         externalUrl: ""
         externalLabel: ""
         typeClass: ceremony
@@ -64,15 +53,17 @@ multiDay:
       - time: "18:00 – 22:00"
         title: Банкет
         descriptionHtml: ""
+        location: "Nha Trang Marriott Resort & Spa, остров Хон Тре"
         externalUrl: ""
         externalLabel: ""
         typeClass: reception
 
       - time: "22:00"
         title: Афтерпати
-        descriptionHtml: "<p>Бар в городе, на материке. Только для взрослых. Место будет объявлено.</p>"
-        externalUrl: ""
-        externalLabel: ""
+        descriptionHtml: "<p>Сразу после банкета собираемся в Time House на напитки, а дальше немного бар-хоппинга по пешим местам на материке. Только для взрослых.</p>"
+        location: "Time House Bistro & Bar, 16a Đ. Ngô Thời Nhiệm"
+        externalUrl: "https://maps.app.goo.gl/Vmmg3wyweYjkvcuB7"
+        externalLabel: "Как добраться"
         typeClass: party
 
   - label: Встреча после свадьбы
@@ -83,6 +74,7 @@ multiDay:
       - time: "12:00 – 16:00"
         title: Встреча после свадьбы
         descriptionHtml: "<p>Открытый бранч с игристым и закусками. Заходите когда удобно и оставайтесь сколько хотите. Без расписания, просто ещё немного времени вместе.</p>"
-        externalUrl: ""
-        externalLabel: ""
+        location: "В нашей вилле — Nha Trang Marriott Resort & Spa, остров Хон Тре"
+        externalUrl: "https://maps.app.goo.gl/kpG5MYX2LGKW8xFM8"
+        externalLabel: "Как добраться"
         typeClass: other

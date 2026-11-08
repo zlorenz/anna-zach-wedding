@@ -122,6 +122,9 @@ const { introHtml, weddingDay, multiDay } = itinerary;
                                     {event.descriptionHtml && (
                                       <div class="az-itinerary-event__description" set:html={event.descriptionHtml} />
                                     )}
+                                    {event.location && (
+                                      <div class="az-itinerary-event__location">{decodeEntities(event.location)}</div>
+                                    )}
                                     {event.externalUrl && (
                                       <a
                                         class="az-itinerary-event__external-link"

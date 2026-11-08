@@ -35,25 +35,13 @@ weddingDay:
 
   - time: "10:00 pm"
     title: After Party
-    descriptionHtml: "<p>Late-night celebration with music and drinks at a bar in the city on the mainland. Adults only.</p>"
-    location: "Location to be announced"
+    descriptionHtml: "<p>We'll meet at Time House for drinks right after the reception, then do some bar hopping around walkable spots on the mainland. Adults only.</p>"
+    location: "Time House Bistro & Bar, 16a Đ. Ngô Thời Nhiệm"
     featured: false
     typeClass: party
 
 # multiDay: set highlight: true on the main wedding day (shows “Wedding day” label + accent styling)
 multiDay:
-  - label: Rehearsal Dinner
-    date: "Dec 4, 2026"
-    descriptionHtml: ""
-    highlight: false
-    events:
-      - time: "6:30 pm - 9:30 pm"
-        title: Rehearsal Dinner
-        descriptionHtml: "<p>Grillin's & Chillin's, a Spanish restaurant on the mainland. By invitation only for members of the wedding party.</p><p>Behind building OC3 at Mường Thanh Viễn Triều, 03–05 Phạm Văn Đồng, Nha Trang.</p>"
-        externalUrl: "https://maps.app.goo.gl/vXTLJFhmEAUcM2sR6"
-        externalLabel: "Get directions"
-        typeClass: other
-
   - label: After Party
     date: "Dec 5, 2026"
     descriptionHtml: ""
@@ -62,6 +50,7 @@ multiDay:
       - time: "4:00 pm - 5:00 pm"
         title: Wedding Ceremony
         descriptionHtml: ""
+        location: "Nha Trang Marriott Resort & Spa, Hon Tre Island"
         externalUrl: ""
         externalLabel: ""
         typeClass: ceremony
@@ -69,15 +58,17 @@ multiDay:
       - time: "6:00 pm - 10:00 pm"
         title: Reception Dinner
         descriptionHtml: ""
+        location: "Nha Trang Marriott Resort & Spa, Hon Tre Island"
         externalUrl: ""
         externalLabel: ""
         typeClass: reception
 
       - time: "10:00 pm"
         title: After Party
-        descriptionHtml: "<p>A bar in the city on the mainland. Adults only. Location to be announced.</p>"
-        externalUrl: ""
-        externalLabel: ""
+        descriptionHtml: "<p>We'll meet at Time House for drinks right after the reception, then do some bar hopping around walkable spots on the mainland. Adults only.</p>"
+        location: "Time House Bistro & Bar, 16a Đ. Ngô Thời Nhiệm"
+        externalUrl: "https://maps.app.goo.gl/Vmmg3wyweYjkvcuB7"
+        externalLabel: "Get directions"
         typeClass: party
 
   - label: Post-Wedding Hangout
@@ -88,6 +79,7 @@ multiDay:
       - time: "12:00 pm - 4:00 pm"
         title: Post-Wedding Hangout
         descriptionHtml: "<p>An open-house brunch with mimosas and finger food—drop in whenever you like and stay as long as you want. No set schedule, just some extra time to hang out with us.</p>"
-        externalUrl: ""
-        externalLabel: ""
+        location: "At our villa — Nha Trang Marriott Resort & Spa, Hon Tre Island"
+        externalUrl: "https://maps.app.goo.gl/kpG5MYX2LGKW8xFM8"
+        externalLabel: "Get directions"
         typeClass: other

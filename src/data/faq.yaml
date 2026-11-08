@@ -25,7 +25,7 @@ questions:
     tooltipColor: blue_mist
 
   - question: How do I get to the wedding venue?
-    answer: The wedding takes place at the Nha Trang Marriott on Hon Tre Island, just off the coast of Nha Trang. Guests staying in the city will travel via the Vinpearl terminal, then take a quick cable car or ferry ride followed by a free resort shuttle. It’s very smooth and easy once you arrive.
+    answer: The wedding takes place at the <a href="https://maps.app.goo.gl/kpG5MYX2LGKW8xFM8" target="_blank" rel="noopener noreferrer">Nha Trang Marriott on Hon Tre Island</a>, just off the coast of Nha Trang. Guests staying in the city will travel via the <a href="https://maps.app.goo.gl/YRTaNB2vNE9k64Ty8" target="_blank" rel="noopener noreferrer">Vinpearl terminal</a>, then take a quick cable car or ferry ride followed by a free resort shuttle. It’s very smooth and easy once you arrive.
     tooltipColor: pink_soft
 
   - question: What time should I show up for the ceremony?
@@ -33,7 +33,7 @@ questions:
     tooltipColor: blue_mist
 
   - question: What time will the reception end?
-    answer: The reception will wrap up around 10:00 PM. For those who want to keep the night going, we'll have an after-party starting at 10:00 PM at a bar in the city on the mainland (location to be announced). Everyone is welcome—just note that this portion of the evening will be adults only.
+    answer: The reception will wrap up around 10:00 PM. For those who want to keep the night going, we'll meet at <a href="https://maps.app.goo.gl/Vmmg3wyweYjkvcuB7" target="_blank" rel="noopener noreferrer">Time House Bistro &amp; Bar</a> on the mainland at 10:00 PM for drinks, then do some bar hopping nearby. Everyone is welcome—just note that this portion of the evening will be adults only.
     tooltipColor: pink_soft
 
   - question: Will there be an open bar?
@@ -49,7 +49,7 @@ questions:
     tooltipColor: blue_mist
 
   - question: Will there be a post-wedding hangout?
-    answer: Yes, we'll be hosting a hangout the day after the wedding at our villa. Feel free to drop by anytime between 12:00 PM and 4:00 PM. It's a relaxed, come-and-go setup with no formal schedule—just a chance to hang out, recover, and spend a bit more time together before everyone heads home.
+    answer: Yes, we'll be hosting a hangout the day after the wedding at <a href="https://maps.app.goo.gl/kpG5MYX2LGKW8xFM8" target="_blank" rel="noopener noreferrer">our villa at the Marriott</a>. Feel free to drop by anytime between 12:00 PM and 4:00 PM. It's a relaxed, come-and-go setup with no formal schedule—just a chance to hang out, recover, and spend a bit more time together before everyone heads home.
     tooltipColor: pink_soft
 
   - question: When should I book travel and accommodation?
@@ -75,7 +75,7 @@ questions:
     tooltipColor: pink_soft
 
   - question: What's the best way to get from the airport to my hotel?
-    answer: We recommend using Grab, the Southeast Asian version of Uber. It's reliable and works great for airport pickups. You can find download links on the <a href="/travel/">Travel page</a>. If you're staying at the wedding venue on Hon Tre Island, book a ride to the Vinpearl terminal on the mainland first. From there, check in with Marriott staff and take the cable car or ferry to the island, then the resort shuttle. Once you're on the mainland, Grab is also the easiest way to get around Nha Trang. If you're feeling adventurous, motorbike rentals are easy to find around the city.
+    answer: We recommend using Grab, the Southeast Asian version of Uber. It's reliable and works great for airport pickups. You can find download links on the <a href="/travel/">Travel page</a>. If you're staying at the <a href="https://maps.app.goo.gl/kpG5MYX2LGKW8xFM8" target="_blank" rel="noopener noreferrer">wedding venue on Hon Tre Island</a>, book a ride to the <a href="https://maps.app.goo.gl/YRTaNB2vNE9k64Ty8" target="_blank" rel="noopener noreferrer">Vinpearl terminal</a> on the mainland first. From there, check in with Marriott staff and take the cable car or ferry to the island, then the resort shuttle. Once you're on the mainland, Grab is also the easiest way to get around Nha Trang. If you're feeling adventurous, motorbike rentals are easy to find around the city.
     tooltipColor: blue_mist
 
   - question: Will I be able to use a credit card, or should I bring cash?

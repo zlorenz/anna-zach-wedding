@@ -1860,6 +1860,10 @@ body.page-itinerary:has(.az-itinerary-image-break) .az-itinerary-image-break.az-
   color: color-mix(in srgb, var(--az-surface-alt) 88%, transparent);
 }
 
+.az-itinerary-page__section--multi-day .az-itinerary-event__location {
+  color: color-mix(in srgb, var(--az-surface-alt) 72%, transparent);
+}
+
 .az-itinerary-page__section--multi-day .az-itinerary-event__external-link {
   color: var(--az-surface);
 }
