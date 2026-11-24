@@ -47,9 +47,26 @@ export type FaqQuestion = {
   imagesGalleryAlt?: string;
 };
 
+export type FaqGifts = {
+  eyebrow: string;
+  title: string;
+  paragraphs: string[];
+  qr: string;
+  qrAlt: string;
+  method: string;
+  recipient: string;
+  detail: string;
+  linkUrl?: string;
+  linkLabel?: string;
+  copyValue?: string;
+  copyLabel?: string;
+  copiedLabel?: string;
+};
+
 export type FaqData = {
   title: string;
   questions: FaqQuestion[];
+  gifts?: FaqGifts;
 };
 
 export type AccommodationMapData = {
@@ -274,6 +291,12 @@ function buildFaqData(faqYaml: string): FaqData {
       ...row,
       answer: normalizeProseHtml(row.answer.trimEnd()),
     })),
+    gifts: faqParsed.gifts
+      ? {
+          ...faqParsed.gifts,
+          paragraphs: faqParsed.gifts.paragraphs.map((paragraph) => paragraph.trim()),
+        }
+      : undefined,
   };
 }
 

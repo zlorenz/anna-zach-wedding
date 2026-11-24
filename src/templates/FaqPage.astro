@@ -11,7 +11,7 @@ interface Props {
 const locale = Astro.props.locale ?? 'en';
 const { site, faq } = getContent(locale);
 const ui = getUi(locale);
-const { title, questions } = faq;
+const { title, questions, gifts } = faq;
 ---
 
 <BaseLayout title={`${title} · ${site.name}`} bodyClass="page-faq" locale={locale}>
@@ -123,5 +123,73 @@ const { title, questions } = faq;
       }
     </div>
   </section>
+  {
+    gifts && (
+      <section id="az-faq-gifts" class="az-section az-section--dark az-faq-gifts" aria-labelledby="az-faq-gifts-title">
+        <div class="container az-page-width">
+          <div class="row align-items-center gy-5 gx-lg-5">
+            <div class="col-lg-7">
+              <p class="az-faq-gifts__eyebrow">{gifts.eyebrow}</p>
+              <h2 id="az-faq-gifts-title" class="az-faq-gifts__title">{gifts.title}</h2>
+              <div class="az-faq-gifts__body">
+                {gifts.paragraphs.map((paragraph) => (
+                  <p set:html={paragraph} />
+                ))}
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <figure class="az-faq-gifts__card">
+                <img
+                  src={assetUrl(gifts.qr)}
+                  alt={gifts.qrAlt}
+                  width="380"
+                  height="380"
+                  decoding="async"
+                />
+                <figcaption class="az-faq-gifts__caption">
+                  <span class="az-faq-gifts__method">{gifts.method}</span>
+                  <span class="az-faq-gifts__recipient">{gifts.recipient}</span>
+                  {
+                    gifts.linkUrl && gifts.linkLabel && (
+                      <a class="az-faq-gifts__pay" href={gifts.linkUrl}>
+                        {gifts.linkLabel}
+                      </a>
+                    )
+                  }
+                  {
+                    gifts.copyValue ? (
+                      <button
+                        type="button"
+                        class="az-faq-gifts__copy"
+                        data-az-gift-copy={gifts.copyValue}
+                        data-copy-label={gifts.copyLabel}
+                        data-copied-label={gifts.copiedLabel}
+                      >
+                        <span class="az-faq-gifts__detail">{gifts.detail}</span>
+                        <span class="az-faq-gifts__copy-state" aria-live="polite">
+                          {gifts.copyLabel}
+                        </span>
+                      </button>
+                    ) : gifts.linkUrl ? (
+                      <a
+                        class="az-faq-gifts__detail"
+                        href={gifts.linkUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {gifts.detail}
+                      </a>
+                    ) : (
+                      <span class="az-faq-gifts__detail">{gifts.detail}</span>
+                    )
+                  }
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
   <script slot="scripts" src="/assets/js/faq-accordion.js" defer></script>
 </BaseLayout>

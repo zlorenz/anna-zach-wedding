@@ -164,6 +164,9 @@ html[lang="ru"] :is(
 html[lang="ru"] :is(
   .az-travel__button,
   .az-travel__button--outline-light,
+  .az-faq-gifts__pay,
+  .az-faq-gifts__copy,
+  .az-faq-gifts__copy-state,
   .az-faq__toggle-all,
   .az-accommodation-pick-card__link,
   .az-mobile-header-rsvp,
@@ -807,7 +810,7 @@ body.az-inner-page #az-main {
   }
 
   /* Body copy — exclude card/FAQ contexts styled below */
-  #az-main p:not(.az-welcome-reveal__block):not(.az-home-welcome__signature):not(.az-hero-meta-item):not(.az-travel-essentials__eyebrow):not(.az-travel-callout__label):not(.az-accommodation-eyebrow):not(.az-itinerary-event__description p):not(.az-accommodation-pick-card p):not(.az-faq__answer p),
+  #az-main p:not(.az-welcome-reveal__block):not(.az-home-welcome__signature):not(.az-hero-meta-item):not(.az-travel-essentials__eyebrow):not(.az-travel-callout__label):not(.az-accommodation-eyebrow):not(.az-itinerary-event__description p):not(.az-accommodation-pick-card p):not(.az-faq__answer p):not(.az-faq-gifts__eyebrow),
   #az-main .az-prose:not(.az-home-welcome__copy) {
     font-size: var(--az-body-copy-size);
     line-height: var(--az-body-copy-line-height);
@@ -1428,7 +1431,7 @@ textarea:not(.az-rsvp-textarea):-webkit-autofill:focus {
 ================================ */
 
 .az-faq {
-  padding-bottom: 4rem;
+  padding-bottom: clamp(3.5rem, 6vw, 5rem);
 }
 
 .az-faq__intro {
@@ -1671,7 +1674,7 @@ textarea:not(.az-rsvp-textarea):-webkit-autofill:focus {
 
 @media (max-width: 991.98px) {
   .az-faq {
-    padding-bottom: 2.5rem;
+    padding-bottom: 3.25rem;
   }
 
   .az-faq__intro {
@@ -1704,6 +1707,208 @@ textarea:not(.az-rsvp-textarea):-webkit-autofill:focus {
 @media (prefers-reduced-motion: reduce) {
   .az-faq__bullet {
     transition: none;
+  }
+}
+
+/* ================================
+   FAQ — Gifts (dark section)
+================================ */
+
+.az-faq-gifts {
+  scroll-margin-top: var(--az-main-nav-offset);
+  background: var(--az-heading);
+  color: var(--az-surface-alt);
+  padding-top: clamp(4.25rem, 7vw, 6.25rem);
+  padding-bottom: clamp(4.5rem, 7vw, 6.5rem);
+}
+
+.az-faq-gifts__eyebrow {
+  margin: 0;
+  font-family: var(--az-font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.23em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--az-surface-alt);
+}
+
+.az-faq-gifts__eyebrow::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  margin-top: 1.25rem;
+  margin-bottom: 1.75rem;
+  background: var(--az-bg);
+}
+
+.az-faq-gifts__title {
+  max-width: 12em;
+  margin: 0 0 1.5rem;
+  color: var(--az-surface);
+  font-family: var(--az-font-heading);
+  font-size: clamp(2.6rem, 5vw, 4.25rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+.az-faq-gifts__body {
+  max-width: 38rem;
+}
+
+.az-faq-gifts__body p {
+  margin: 0;
+  color: var(--az-surface-alt);
+  font-size: clamp(1.15rem, 1.4vw, 1.26rem);
+  line-height: 1.55;
+}
+
+.az-faq-gifts__body p + p {
+  margin-top: 1.15rem;
+}
+
+.az-faq-gifts__card {
+  margin: 0;
+  max-width: 22.5rem;
+  padding: 1.15rem 1.15rem 1.4rem;
+  background: var(--az-surface);
+  border-radius: var(--az-radius-card);
+  text-align: center;
+}
+
+.az-faq-gifts__card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.az-faq-gifts__caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  margin-top: 0.15rem;
+  padding-top: 0.95rem;
+  border-top: 1px solid color-mix(in srgb, var(--az-border) 65%, var(--az-surface));
+}
+
+.az-faq-gifts__method {
+  font-family: var(--az-font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  color: var(--az-text-soft);
+}
+
+.az-faq-gifts__recipient {
+  font-family: var(--az-font-heading);
+  font-size: clamp(1.55rem, 2vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0;
+  color: var(--az-heading);
+}
+
+.az-faq-gifts__detail {
+  margin-top: 0.15rem;
+  font-family: var(--az-font-sans);
+  font-size: 1.02rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  color: var(--az-text);
+  text-decoration: none;
+}
+
+a.az-faq-gifts__detail {
+  color: var(--az-heading);
+  font-weight: 500;
+}
+
+a.az-faq-gifts__detail:hover,
+a.az-faq-gifts__detail:focus-visible {
+  color: var(--az-text);
+}
+
+.az-faq-gifts__pay {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0.85rem;
+  padding: 0.72rem 1.25rem;
+  border: 1.5px solid var(--az-heading);
+  border-radius: 999px;
+  background: var(--az-heading);
+  color: var(--az-surface);
+  font-family: var(--az-font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+a.az-faq-gifts__pay,
+a.az-faq-gifts__pay:hover,
+a.az-faq-gifts__pay:focus-visible {
+  color: var(--az-surface);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a.az-faq-gifts__pay:hover,
+a.az-faq-gifts__pay:focus-visible {
+  background: transparent;
+  color: var(--az-heading);
+}
+
+.az-faq-gifts__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  width: 100%;
+  margin-top: 0.7rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+}
+
+.az-faq-gifts__copy .az-faq-gifts__detail {
+  margin-top: 0;
+}
+
+.az-faq-gifts__copy-state {
+  font-family: var(--az-font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--az-text-soft);
+}
+
+.az-faq-gifts__copy.is-copied .az-faq-gifts__copy-state {
+  color: var(--az-heading);
+}
+
+.az-faq-gifts__copy:hover .az-faq-gifts__copy-state,
+.az-faq-gifts__copy:focus-visible .az-faq-gifts__copy-state {
+  color: var(--az-heading);
+}
+
+@media (min-width: 992px) {
+  .az-faq-gifts__card {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -3192,6 +3397,16 @@ html[lang="ru"] :is(
 html[lang="ru"] :is(h1, h2, h3, h4, h5, h6, .az-itinerary-event__title) {
   font-weight: 600;
   letter-spacing: 0.02em;
+}
+
+html[lang="ru"] .az-faq-gifts__title {
+  max-width: 9em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+html[lang="ru"] .az-faq-gifts__recipient {
+  font-weight: 600;
 }
 
 html[lang="ru"] body,

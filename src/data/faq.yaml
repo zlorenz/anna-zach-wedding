@@ -85,3 +85,16 @@ questions:
   - question: How do I get a data plan on my phone?
     answer: The easiest option is to set up an eSIM before you travel. We have some recommended options and links on the <a href="/travel/">Travel page</a>. You can also buy a local SIM card at the airport or in the city, though the experience can be more hit-or-miss compared to setting things up in advance.
     tooltipColor: blue_mist
+
+gifts:
+  eyebrow: Gifts
+  title: No need for gifts!
+  paragraphs:
+    - Having you with us in Nha Trang is more than enough. Please don’t buy or bring anything — the trip here is the gift.
+    - 'If you’d still like to give something, a cash gift of any amount is welcome. You can send it to <a href="https://venmo.com/u/zacharialorenz" target="_blank" rel="noopener noreferrer">Zach on Venmo</a> or <a href="/ru/faq/#az-faq-gifts">Anna with any Russian bank</a>.'
+  qr: images/faq/gifts-venmo-qr.png
+  qrAlt: Venmo QR code for Zacharia Lorenz
+  method: Venmo
+  recipient: Zacharia Lorenz
+  detail: "@zacharialorenz"
+  linkUrl: https://venmo.com/u/zacharialorenz
